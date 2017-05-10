@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import Karola from'./Karola';
 import {
     BrowserRouter as Router,
     Route
@@ -9,10 +10,7 @@ import {
 class App extends Component {
   render() {
     return (
-      <Router>
-          <Route exact path="/" component={() => <p>Hello</p>}/>
-
-      </Router>
+        <Karola />
 
     );
   }
