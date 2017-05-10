@@ -5,14 +5,13 @@ import {
     Route
 } from 'react-router-dom'
 
+import Comp from './Comp'
+
 
 class App extends Component {
   render() {
     return (
-      <Router>
-          <Route exact path="/" component={() => <p>Hello</p>}/>
-
-      </Router>
+        <Comp/>
 
     );
   }
