@@ -50,13 +50,11 @@ const Popup = React.createClass({
             <p>tekst 2</p>
 
             <h4>Nagłówek 3</h4>
-            <p>tekst nagłówka<OverlayTrigger overlay={popover}><a href="#">popover</a></OverlayTrigger> tu</p>
+            <p>tekst nagłówka<OverlayTrigger overlay={popover}><a href="#">popover</a></OverlayTrigger> tu będzie</p>
 
             <h4>Nagłówek 4</h4>
-            <p>tekst nagłówka<OverlayTrigger overlay={tooltip}><a href="#">tooltip</a></OverlayTrigger> tu</p>
-
+            <p>tekst nagłówka<OverlayTrigger overlay={tooltip}><a href="#">tooltip</a></OverlayTrigger> tu będzie</p>
             <hr />
-
             <h4>Samo powitanie</h4>
             <p>Witaj pielgrzymie powodzenia</p>
             <p>Tekst powitania witaj wędrowcze na stronie</p>
