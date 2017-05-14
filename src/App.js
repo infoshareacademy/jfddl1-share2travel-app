@@ -1,7 +1,11 @@
 import React, {Component} from 'react';
 import './App.css';
 
+import Custom from './custom';
+
 import Popup from './Popup';
+
+
 
 import {
   BrowserRouter as Router,
@@ -15,6 +19,7 @@ class App extends Component {
       <div>
         <Router>
           <Route exact path="/" component={Popup}/>
+          <Route exact path="/" component={Custom}/>
         </Router>
       </div>
     );
