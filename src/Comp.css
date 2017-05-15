@@ -1,0 +1,53 @@
+img{
+    width:100%;
+    height: auto;
+}
+Button{
+    width:100%;
+    border-radius: 10px;
+    color:black;
+    background-color: greenyellow;
+
+}
+Button #go{
+    float: right;
+    width:10%;
+}
+Button img{
+    float: left;
+    height:10%;
+    width:10%;
+}
+/*.firstRowImage{
+    height: 100%;
+}
+.firstRowButtons{
+    height: 100%;
+}*/
+
+#but1{
+    margin-top:25%;
+}
+.lorem{
+    text-align: center;
+}
+
+p{
+    font-size:20px;
+    text-align: left;
+}
+.left{
+    float:left;
+}
+.right{
+    height:10%;
+    width:10%;
+    float:right;
+}
+.header{
+    background-color: red;
+}
+
+.center{
+    text-align: center;
+}
