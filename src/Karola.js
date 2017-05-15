@@ -6,61 +6,75 @@ import products from './data/products'
 import './App.css';
 import './Karola.css';
 import Form from './Form'
+import { Table } from 'react-bootstrap'
 
 // import {
 //     BrowserRouter as Router,
 //     Route
 // } from 'react-router-dom'
-// let prodyctArray = products;
+// let products = products;
 
 class Karola extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            products,
-            prodyctArray: products,
+            searchPhrase: '',
+            products
         };
-
+        fetch(
+            process.env.PUBLIC_URL + '/data/products.js'
+        ).then(
+            response => response.json()
+        ).then(
+            students => this.setState({
+                products: products
+            })
+        )
     }
 
 
-    onDataChange(value) {
-        let prodyctArray = this.state.prodyctArray.filter((product) => {
-            if (product.product.includes(value)) {
-                return product
-            }
-        })
-
-        if(prodyctArray.length === 0){
-            prodyctArray = this.state.products;
-        }
-        console.log('prodyctArray', prodyctArray);
-
+    onInputChange = event => {
         this.setState({
-            prodyctArray
+            searchPhrase: event.target.value
         })
     }
 
     render() {
         return (
-            <div>
-                <h1>Products</h1>
-                <Form onUserChange={this.onDataChange.bind(this)}/>
+        <div >
+            <h1>Products</h1>
+            <input type="text" onChange={this.onInputChange}/>
 
-                <ul>
-                    {
-                        this.state.prodyctArray.map(
-                            (dat, index) => (
-                                <li key={index}>
-                                    {dat.product},{dat.price},{dat.color}, {dat.producer}
-                                </li>
-                            )
+            <Table striped bordered condensed hover>
+                <thead>
+                <tr>
+                    <th>Products</th>
+                    <th>Price</th>
+                    <th>Color</th>
+                    <th>Producer</th>
+                </tr>
+                </thead>
+                <tbody>
+                {
+                    this.state.products.filter(
+                        item => this.state.searchPhrase === '' ? true : item.product.includes(this.state.searchPhrase)
+                    ).map(
+                        (dat, index) => (
+                            <tr
+                                key={index}
+                            >
+                                <td>{dat.product}</td>
+                                <td>{dat.price}</td>
+                                <td>{dat.color}</td>
+                                <td>{dat.producer}</td>
+                            </tr>
                         )
-                    }
-                </ul>
-            </div>
-
+                    )
+                }
+                </tbody>
+            </Table>
+        </div>
 
         )
     }
@@ -68,3 +82,8 @@ class Karola extends Component {
 }
 
 export default Karola
+
+
+
+
+
