@@ -1,12 +1,18 @@
 /**
  * Created by karolina on 10.05.17.
  */
-import React, {Component} from 'react';
+import React, {Component} from 'react'
 import products from './data/products'
-import './App.css';
+
 import './Karola.css';
 import Form from './Form'
+import 'bootstrap/dist/css/bootstrap.css'
+import './App.css'
+import 'admin-lte/dist/css/AdminLTE.min.css'
+
 import { Table } from 'react-bootstrap'
+
+
 
 // import {
 //     BrowserRouter as Router,
@@ -45,6 +51,7 @@ class Karola extends Component {
         <div >
             <h1>Products</h1>
             <input type="text" onChange={this.onInputChange}/>
+
 
             <Table striped bordered condensed hover>
                 <thead>

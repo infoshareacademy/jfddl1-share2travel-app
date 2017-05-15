@@ -1,3 +1,22 @@
-body{
-    background: url('img/bacground.png');
+body { background: url('img/bacground.png');
+
+}
+div{
+    text-align: center;
+}
+th td {
+text-align: left;
+
+}
+td:hover{
+    background-color: inherit;
+}
+input{
+  width:30%;
+    margin: 10px;
+
+
+}
+h1{
+    text-align:center ;
 }
