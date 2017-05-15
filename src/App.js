@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './App.css';
 
 import Popup from './Popup';
+import Navbar from './Navbar';
+import Logo from './Logo'
 
 import {
   BrowserRouter as Router,
@@ -12,11 +14,16 @@ import {
 class App extends Component {
   render() {
     return (
+      <Router>
       <div>
-        <Router>
+
           <Route exact path="/" component={Popup}/>
-        </Router>
+          <Navbar/>
+          <Logo/>
+
+
       </div>
+  </Router>
     );
   }
 }

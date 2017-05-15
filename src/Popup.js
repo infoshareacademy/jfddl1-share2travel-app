@@ -30,9 +30,8 @@ const Popup = React.createClass({
 
     return (
       <div>
-        <p>przycisk spowoduje wyświetlenie instrukcji</p>
-
         <Button
+          className="bg-purple"
           bsStyle="primary"
           bsSize="large"
           onClick={this.open}
