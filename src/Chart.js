@@ -8,6 +8,11 @@ const config = {
   xAxis: {
     categories: ['Pon','Wt','Śr','Czw','Pt','Sob','Ndz']
   },
+  yAxis: {
+    title: {
+      text: 'Cena'
+    }
+  },
   series: [{
     data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
   }]
@@ -20,7 +25,7 @@ class Chart extends React.Component {
   }
 
   render() {
-    return <ReactHighcharts className='wykres' config={config} ref="chart"></ReactHighcharts>;
+    return <ReactHighcharts className='wykres' config={{...config, series: this.props.series}} ref="chart"></ReactHighcharts>;
   }
 }
 export default Chart;

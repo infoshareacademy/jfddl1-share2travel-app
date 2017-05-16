@@ -52,7 +52,7 @@ class Comp extends React.Component{
 						</Row>
 						<Row>	
 							<Col className='wykresik' lg={6}>
-								<Chart/>
+								<Chart series={[{data: [209.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]}]}/>
 							</Col>
 							{/*<Col className='trend' xs={12} sm={12} md={6} lg={6}>
 							
