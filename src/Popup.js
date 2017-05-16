@@ -41,22 +41,14 @@ class Popup extends React.Component {
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Tytuł i opis</Modal.Title>
+            <Modal.Title>Witaj Użytkowniku</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            <h4>Nagłówek 2</h4>
-            <p>tekst 2</p>
+            <h4>Instrukcja korzystania z aplikacji</h4>
+            <p>Aplikcja 'porównywarka cen' pomoże w łatwy i przystępny sposób porównć cenyi produkty</p>
 
-            <h4>bajery</h4>
-            <p>there is a <OverlayTrigger overlay={popover}><a href="#">popover</a></OverlayTrigger> here</p>
-
-            <h4>bajery2</h4>
-            <p>there is a <OverlayTrigger overlay={tooltip}><a href="#">tooltip</a></OverlayTrigger> here</p>
-
-            <hr />
-
-            <h4>Nagłówek</h4>
-            <p>Tekst</p>
+            <h4>Powodzenia wędrowcze</h4>
+            <p>Pamiętaj zawsze możesz tu wrócić !</p>
 
           </Modal.Body>
           <Modal.Footer>
