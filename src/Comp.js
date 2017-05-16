@@ -1,5 +1,6 @@
-import React from 'react'
+import React from 'react';
 import { Grid, Row, Col, Tab, Tabs, ButtonToolbar, Button, Panel} from 'react-bootstrap';
+import Chart from './Chart'
 import './Comp.css'
 
 class Comp extends React.Component{
@@ -8,35 +9,50 @@ class Comp extends React.Component{
 					<Grid>
 						<Panel className='center' bsStyle="primary" header='Nazwa produktu'>
    				 	</Panel>
-						<Row className='firstRow'>
-							<Col className='firstRowImage' xs={12} sm={12} md={6} lg={6}>
-								<img src='shoe.jpg'/>
+						<Row className='firstRow vertical-align'>
+							<Col className='firstRowImage' lg={4}>
+								<img src='shoe.jpg' alt=''/>
 							</Col>
-							<Col className='firstRowButtons' xs={12} sm={12} md={6} lg={6}>
-									<ButtonToolbar>
-									<Button bsStyle="info" id='but1' xs={10}><img className='left' src='nike.png'/>1800zł</Button>
-									<Button bsStyle="info" id='but2' xs={12}><img src='nike.png'/>1500zł</Button>
-									<Button bsStyle="info" id='but3' xs={12}><img src='nike.png'/>1200zł</Button>
-									<Button bsStyle="info" id='but4' xs={12}><img src='nike.png'/>1000zł</Button>
-									</ButtonToolbar>
-							</Col>
-						</Row>
-						<Row>	
-							<Col className='lorem' xs={12} sm={12} md={12} lg={12}>
-							<Tabs justified defaultActiveKey={1} animation={false} id="noanim-tab-example">
-    						<Tab eventKey={1} title="Opis">
+							<Col className='opis' lg={4}>
 								<p>
 								Typ produktu: "Keyboard"<br/>
 								Kolor: ivory<br/>
 								Materiał: Soft<br/>
 								Producent: Schinner Group<br/>
 								</p>
-								</Tab>
-   							<Tab eventKey={2} title="Opinie">Coś nowego</Tab>
-    						<Tab eventKey={3} title="Trend">
-								<img src='trend.gif'/>
-								</Tab>
-  						</Tabs>
+							</Col>
+							<Col className='firstRowButtons' lg={4}>
+									<ButtonToolbar>
+									<Button bsStyle="info" id='but1' >
+										<img className='left' src='nike.png' alt=''/>
+											<span className='price'>
+												1800zł
+											</span>
+										</Button>
+									<Button bsStyle="info" id='but2' >
+										<img src='nike.png' alt=''/>
+											<span className='price'>
+												1200zł
+											</span>
+										</Button>
+									<Button bsStyle="info" id='but3' >
+										<img src='nike.png' alt=''/>
+											<span className='price'>
+												1100zł
+											</span>
+										</Button>
+									<Button bsStyle="info" id='but4' >
+										<img src='nike.png' alt=''/>
+											<span className='price'>
+												1000zł
+											</span>
+										</Button>
+									</ButtonToolbar>
+							</Col>
+						</Row>
+						<Row>	
+							<Col className='wykresik' lg={6}>
+								<Chart/>
 							</Col>
 							{/*<Col className='trend' xs={12} sm={12} md={6} lg={6}>
 							

@@ -7,7 +7,7 @@ Button{
     border-radius: 10px;
     color:black;
     background-color: greenyellow;
-
+    margin: 2%;
 }
 Button #go{
     float: right;
@@ -15,18 +15,8 @@ Button #go{
 }
 Button img{
     float: left;
-    height:10%;
-    width:10%;
-}
-/*.firstRowImage{
-    height: 100%;
-}
-.firstRowButtons{
-    height: 100%;
-}*/
-
-#but1{
-    margin-top:25%;
+    height:20%;
+    width:20%;
 }
 .lorem{
     text-align: center;
@@ -49,5 +39,19 @@ p{
 }
 
 .center{
+    text-align: center;
+}
+.price{
+    font-size: 30px;
+}
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+.wykresik{
+    width:100%;
+    height:auto;   
+}
+.opis{
     text-align: center;
 }
