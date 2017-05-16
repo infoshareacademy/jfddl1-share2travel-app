@@ -26,7 +26,7 @@ const About = () => (
     <h2>About</h2>
     <Popup/>
 
-    <GenericPopup title="One">
+    <GenericPopup title="1">
       <h4>Text in a modal</h4>
       <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
 
@@ -50,14 +50,14 @@ const About = () => (
       <p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Donec sed odio dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
     </GenericPopup>
 
-    <GenericPopup title="Two">
+    <GenericPopup title="1">
       <p>Hello world</p>
     </GenericPopup>
 
-    <GenericPopup title="Three">
+    <GenericPopup title="2">
       <form>
         <FormGroup>
-          <FormControl placeholder="Nada"/><Button>Kaboom</Button>
+          <FormControl placeholder="3"/><Button>Kaboom</Button>
         </FormGroup>
       </form>
     </GenericPopup>
