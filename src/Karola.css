@@ -8,8 +8,9 @@ th td {
 text-align: left;
 
 }
-td:hover{
+thead:hover{
     background-color: inherit;
+    text-align: center;
 }
 input{
   width:30%;
@@ -19,4 +20,25 @@ input{
 }
 h1{
     text-align:center ;
+    color:#000;
+}
+.table-bordered>thead>tr>th, table-bordered>thead>tr>td {
+    text-align: center;
+    line-height: 10px;
+    font-size: 2rem;
+
+}
+.table-bordered>thead>tr>th{
+    line-height: 10px;
+    font-size: 2rem;
+}
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #9abbd8;
+}
+.table-striped > tbody > tr:nth-of-type(odd):hover {
+    background-color: #fff;
+    cursor: pointer;
+}
+.table > caption + thead > tr:first-child > th, .table > colgroup + thead > tr:first-child > th, .table > thead:first-child > tr:first-child > th, .table > caption + thead > tr:first-child > td, .table > colgroup + thead > tr:first-child > td, .table > thead:first-child > tr:first-child > td {
+    line-height: 30px;
 }

@@ -4,7 +4,6 @@
 import React, {Component} from 'react'
 import products from './data/products'
 
-import './Karola.css';
 import Form from './Form'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
@@ -12,6 +11,7 @@ import 'admin-lte/dist/css/AdminLTE.min.css'
 
 import { Table } from 'react-bootstrap'
 
+import './Karola.css';
 
 
 // import {
@@ -60,13 +60,15 @@ class Karola extends Component {
                     <th>Price</th>
                     <th>Color</th>
                     <th>Producer</th>
+                    <th>Images</th>
                 </tr>
                 </thead>
                 <tbody>
                 {
                     this.state.products.filter(
                         item => this.state.searchPhrase === '' ? true : item.product.includes(this.state.searchPhrase)
-                    ).map(
+                    ). sort((a,b)=>a.price-b.price)
+                        .map(
                         (dat, index) => (
                             <tr
                                 key={index}
@@ -75,6 +77,7 @@ class Karola extends Component {
                                 <td>{dat.price}</td>
                                 <td>{dat.color}</td>
                                 <td>{dat.producer}</td>
+                                <td><img className="img-responsive" width={250} height={150} src={'/img/comp.png'}/> </td>
                             </tr>
                         )
                     )
