@@ -19,6 +19,7 @@ import { connect } from 'react-redux'
 
 import Home from './Home'
 import About from './About'
+// import Szukaj from './Szukaj'
 
 import BurgerMenuWrapper from './BurgerMenuWrapper'
 import TopNavigation from './TopNavigation'
@@ -47,6 +48,7 @@ const App = (props) => (
           <Col md={12}>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
+            {/*<Route component={Szukaj}/>*/}
           </Col>
         </Row>
       </Grid>
