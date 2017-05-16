@@ -29,7 +29,7 @@ class Karola extends Component {
             products
         };
         fetch(
-            process.env.PUBLIC_URL + '/data/products.js'
+            process.env.PUBLIC_URL + '/data/products.json'
         ).then(
             response => response.json()
         ).then(
