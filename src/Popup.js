@@ -41,7 +41,7 @@ class Popup extends React.Component {
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Witaj Użytkowniku</Modal.Title>
+            <Modal.Title >Witaj Użytkowniku</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>Instrukcja korzystania z aplikacji</h4>
@@ -52,7 +52,7 @@ class Popup extends React.Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
+            <Button onClick={this.close} bsStyle="info" >Zamknij</Button>
           </Modal.Footer>
         </Modal>
       </div>

@@ -9,3 +9,6 @@ body {
   background-color: #DDDDDD;
   background-image: none;
 }
+.modal-tooltip{
+  background-color: green;
+}
