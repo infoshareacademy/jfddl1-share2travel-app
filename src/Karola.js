@@ -3,8 +3,7 @@
  */
 import React, {Component} from 'react'
 import products from './data/products'
-
-import Form from './Form'
+import GenericTable from './GenericTable'
 import 'bootstrap/dist/css/bootstrap.css'
 import './App.css'
 import 'admin-lte/dist/css/AdminLTE.min.css'
@@ -14,11 +13,7 @@ import { Table } from 'react-bootstrap'
 import './Karola.css';
 
 
-// import {
-//     BrowserRouter as Router,
-//     Route
-// } from 'react-router-dom'
-// let products = products;
+
 
 class Karola extends Component {
 
@@ -48,8 +43,34 @@ class Karola extends Component {
 
     render() {
         return (
-        <div >
+        <div>
             <h1>Products</h1>
+
+            <GenericTable
+                data={this.state.products}
+                config={[
+                    {
+                        name: 'product',
+                        label: 'products'
+                    },
+                    {
+                        name: 'price',
+                        label: 'price'
+                    },
+                    {
+                        name: 'color',
+                        label: 'color'
+                    },
+                    {
+                        name: 'producer',
+                        label: 'producer'
+                    }
+                ]}
+                linked
+                linkPrefix="/products"
+            />
+
+
             <input type="text" onChange={this.onInputChange}/>
 
 
@@ -67,7 +88,7 @@ class Karola extends Component {
                 {
                     this.state.products.filter(
                         item => this.state.searchPhrase === '' ? true : item.product.includes(this.state.searchPhrase)
-                    ). sort((a,b)=>a.price-b.price)
+                    ).sort((a,b)=>a.price-b.price)
                         .map(
                         (dat, index) => (
                             <tr

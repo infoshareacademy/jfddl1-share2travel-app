@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Karola from'./Karola';
+import Product from './Product'
 // import {
 //     BrowserRouter as Router,
 //     Route
@@ -54,6 +55,7 @@ const App = (props) => (
         <Row>
           <Col md={12}>
             <Route exact path="/" component={Karola}/>
+            <Route path="/:productId" component={Product}/>
             <Route path="/about" component={About}/>
             {/*<Route path="/topics" component={Topics}/>*/}
             {/*<Route component={Szukaj}/>*/}
