@@ -2,7 +2,7 @@
  * Created by Grzegorz Wieczorek on 16.05.2017.
  */
 // import React from 'React'
-// import React from 'react'
+
 //
 // const Szukaj = () => (
 //   <div>

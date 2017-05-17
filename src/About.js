@@ -26,30 +26,30 @@ const About = () => (
     <h2>About</h2>
     <Popup/>
 
-    <GenericPopup title="1">
-      <h4>tekst</h4>
-      <p>tekst</p>
+    {/*<GenericPopup title="1">*/}
+      {/*<h4>tekst</h4>*/}
+      {/*<p>tekst</p>*/}
 
 
 
-      <hr />
+      {/*<hr />*/}
 
-      <h4>tekst</h4>
-      <p>tekst</p>
+      {/*<h4>tekst</h4>*/}
+      {/*<p>tekst</p>*/}
 
-    </GenericPopup>
+    {/*</GenericPopup>*/}
 
-    <GenericPopup title="2">
-      <p>tekst</p>
-    </GenericPopup>
+    {/*<GenericPopup title="2">*/}
+      {/*<p>tekst</p>*/}
+    {/*</GenericPopup>*/}
 
-    <GenericPopup title="3">
-      <form>
-        <FormGroup>
-          <FormControl placeholder="3"/><Button>stop</Button>
-        </FormGroup>
-      </form>
-    </GenericPopup>
+    {/*<GenericPopup title="3">*/}
+      {/*<form>*/}
+        {/*<FormGroup>*/}
+          {/*<FormControl placeholder="3"/><Button>stop</Button>*/}
+        {/*</FormGroup>*/}
+      {/*</form>*/}
+    {/*</GenericPopup>*/}
   </div>
 )
 

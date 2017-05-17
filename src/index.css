@@ -1,6 +1,9 @@
 body {
   /*background-image: url("img/hexellence.png");*/
-  background-image:linear-gradient(white, #666666);
+  background-image: url("./img/img1.png");
+  /*background-color: #666666;*/
+
+  /*background-image:linear-gradient(white, #666666);*/
   margin: 0;
   padding: 0;
   font-family: sans-serif;
