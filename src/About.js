@@ -23,7 +23,7 @@ const tooltip = (
 
 const About = () => (
   <div>
-    <h2>About</h2>
+    <h2></h2>
     <Popup/>
 
     {/*<GenericPopup title="1">*/}

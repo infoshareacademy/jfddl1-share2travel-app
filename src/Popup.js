@@ -36,7 +36,7 @@ class Popup extends React.Component {
           bsSize="medium"
           onClick={this.open}
         >
-          Instrukcja
+          Instrukcja korzystania z aplikacji
         </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
