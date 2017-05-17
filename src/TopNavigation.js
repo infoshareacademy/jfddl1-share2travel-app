@@ -37,7 +37,7 @@ const TopNavigation = (props) => (
         event.preventDefault()
         props.toggleSidebar(true)
       }}>
-        <Glyphicon glyph="align-right" /> Toggle sidenav
+        <Glyphicon glyph="align-right" /> Menu
       </NavItem>
     </Nav>
   </Navbar>
