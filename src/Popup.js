@@ -9,7 +9,7 @@ import {
 
 class Popup extends React.Component {
   state = {
-    showModal: false
+    showModal: true
   }
 
   close = () => this.setState({ showModal: false })
