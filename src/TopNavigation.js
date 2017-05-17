@@ -12,7 +12,7 @@ import {
   IndexLinkContainer
 } from 'react-router-bootstrap'
 
-import logo from './logo1.svg'
+import logo from './logo.svg'
 
 const TopNavigation = (props) => (
   <Navbar>

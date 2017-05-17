@@ -1,13 +1,13 @@
 import React from 'react'
 import Popup from './Popup'
-import GenericPopup from './GenericPopup'
+// import GenericPopup from './GenericPopup'
 import {
   Popover,
   Tooltip,
-  OverlayTrigger,
-  FormGroup,
-  FormControl,
-  Button,
+  // OverlayTrigger,
+  // FormGroup,
+  // FormControl,
+  // Button,
 } from 'react-bootstrap'
 
 const popover = (
