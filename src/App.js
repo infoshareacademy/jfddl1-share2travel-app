@@ -53,7 +53,7 @@ const App = (props) => (
 
         <Row>
           <Col md={12}>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Karola}/>
             <Route path="/about" component={About}/>
             {/*<Route path="/topics" component={Topics}/>*/}
             {/*<Route component={Szukaj}/>*/}
