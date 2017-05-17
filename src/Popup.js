@@ -19,12 +19,10 @@ class Popup extends React.Component {
   render = () => {
     const popover = (
       <Popover id="modal-popover" title="popover">
-        very popover. such engagement
       </Popover>
     );
     const tooltip = (
       <Tooltip id="modal-tooltip">
-        wow.
       </Tooltip>
     );
 
@@ -41,13 +39,13 @@ class Popup extends React.Component {
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title >Witaj Użytkowniku</Modal.Title>
+            <Modal.Title >Witaj Użytkowniku !</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>Instrukcja korzystania z aplikacji</h4>
-            <p>Aplikcja 'porównywarka cen' pomoże w łatwy i przystępny sposób porównć cenyi produkty</p>
+            <p>Aplikcja 'porównywarka cen' pomoże w łatwy i przystępny sposób porównć ceny i produkty.</p>
 
-            <h4>Powodzenia wędrowcze</h4>
+            <h4>Powodzenia użytkowniku !</h4>
             <p>Pamiętaj zawsze możesz tu wrócić !</p>
 
           </Modal.Body>

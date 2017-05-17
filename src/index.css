@@ -9,6 +9,15 @@ body {
   background-color: #DDDDDD;
   background-image: none;
 }
-.modal-tooltip{
-  background-color: green;
+.modal-body{
+  background-color: #DDDDDD;
+  color: black;
+}
+.modal-header{
+  background-color: #666666;
+  color: white;
+}
+.modal-footer{
+  background-color: #666666;
+  color: black;
 }
