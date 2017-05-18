@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
 import './App.css';
-// import SmartCounter from './SmartCounter'
-
-// import Popup from './Popup';
-// import Navbar from './Navbar';
-// import Logo from './Logo'
 
 import {
   BrowserRouter as Router,
@@ -19,8 +14,7 @@ import { connect } from 'react-redux'
 
 import Home from './Home'
 import About from './About'
-// import Topics from './Topics'
-// import Szukaj from './Szukaj'
+
 
 import BurgerMenuWrapper from './BurgerMenuWrapper'
 import TopNavigation from './TopNavigation'
@@ -50,8 +44,7 @@ const App = (props) => (
           <Col md={12}>
             <Route exact path="/" component={Home}/>
             <Route path="/about" component={About}/>
-            {/*<Route path="/topics" component={Topics}/>*/}
-            {/*<Route component={Szukaj}/>*/}
+
           </Col>
         </Row>
       </Grid>
