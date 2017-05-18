@@ -4,6 +4,7 @@ import Chart from './Chart'
 import './Comp.css'
 
 const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href);
+const losowy = Math.round(Math.random()*(50)+200);
 
 class Comp extends React.Component{
     render(){
@@ -24,38 +25,38 @@ class Comp extends React.Component{
                         Materiał: Soft<br/>
                         Producent: Schinner Group<br/>
                         </p>
-                        <div class="fb-share-button" data-href="http://app.share2travel.jfddl1.is-academy.pl/" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href={face}>Udostępnij</a></div>
+                        <div className="fb-share-button" data-href="{face}" data-layout="button" data-size="large" data-mobile-iframe="false"><a className="fb-xfbml-parse-ignore" target="_blank" href={face}>Udostępnij</a></div>
                     </Col>
                     <Col className='firstRowButtons' lg={4}>
                         <ButtonToolbar>
                             <Button bsStyle="info" id='but1' >
                                 <img className='left' src='nike.png' alt=''/>
                                 <span className='price'>
-                                    1800zł
+                                    {(losowy-20)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but2' >
                                 <img src='nike.png' alt=''/>
                                 <span className='price'>
-                                    1200zł
+                                    {(losowy-30)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but3' >
                                 <img src='nike.png' alt=''/>
                                 <span className='price'>
-                                    1100zł
+                                    {(losowy-40)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but4' >
                                 <img src='nike.png' alt=''/>
                                 <span className='price'>
-                                    1000zł
+                                    {(losowy-50)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but5' >
                                 <img className='left' src='nike.png' alt=''/>
                                 <span className='price'>
-                                    1800zł
+                                  {(losowy-60)+' zł'}
                                 </span>
                             </Button>
                         </ButtonToolbar>
@@ -64,7 +65,7 @@ class Comp extends React.Component{
 
                 <Row>
                     <Col className='wykresik' lg={6}>
-                        <Chart series={[{data: [209.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]}]}/>
+                        <Chart series={[{data: [losowy, losowy-10, losowy, losowy-30, losowy-30, losowy-50, losowy-60]}]}/>
                     </Col>
                 </Row>
             </Grid>

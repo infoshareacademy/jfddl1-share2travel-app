@@ -21,7 +21,7 @@ const config = {
 class Chart extends React.Component {
   componentDidMount() {
     let chart = this.refs.chart.getChart();
-    chart.series[0].addPoint({x: 6, y: 5});
+    chart.series[0].addPoint({x: 6});
   }
 
   render() {
