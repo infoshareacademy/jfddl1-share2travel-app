@@ -14,8 +14,8 @@ class Product extends React.Component {
         ).then(
             response => response.json()
         ).then(
-            students => this.setState({
-                products: products
+            products => this.setState({
+                products: products.slice(0,10)
             })
         )
     }
@@ -23,20 +23,7 @@ class Product extends React.Component {
     render() {
         const productId = parseInt(this.props.match.params.productId, 10)
         return (
-            <div>
-                Products: {productId}
-                {
-                    this.state.students.filter(
-                        product => product.uid === productId
-                    ).map(
-                        product => (
-                            <ul key={product.uid}>
-                                <li>{product.price}</li>
-                            </ul>
-                        )
-                    )
-                }
-            </div>
+            <p> tu jest miejsce Dla Patryka</p>
         )
     }
 }

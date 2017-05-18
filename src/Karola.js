@@ -45,13 +45,20 @@ class Karola extends Component {
         return (
         <div>
             <h1>Products</h1>
+            <input type="text" onChange={this.onInputChange}/>
 
             <GenericTable
-                data={this.state.products}
+                data={this.state.products.slice(0,100).filter(
+                    item => this.state.searchPhrase === '' ? true : item.product.includes(this.state.searchPhrase)
+                ).sort((a,b)=>a.price-b.price)}
                 config={[
                     {
                         name: 'product',
                         label: 'products'
+                    },
+                    {
+                        name: 'id',
+                        label: 'id'
                     },
                     {
                         name: 'price',
@@ -71,40 +78,7 @@ class Karola extends Component {
             />
 
 
-            <input type="text" onChange={this.onInputChange}/>
 
-
-            <Table striped bordered condensed hover>
-                <thead>
-                <tr>
-                    <th>Products</th>
-                    <th>Price</th>
-                    <th>Color</th>
-                    <th>Producer</th>
-                    <th>Images</th>
-                </tr>
-                </thead>
-                <tbody>
-                {
-                    this.state.products.filter(
-                        item => this.state.searchPhrase === '' ? true : item.product.includes(this.state.searchPhrase)
-                    ).sort((a,b)=>a.price-b.price)
-                        .map(
-                        (dat, index) => (
-                            <tr
-                                key={index}
-                            >
-                                <td>{dat.product}</td>
-                                <td>{dat.price}</td>
-                                <td>{dat.color}</td>
-                                <td>{dat.producer}</td>
-                                <td><img className="img-responsive" width={250} height={150} src={'/img/comp.png'}/> </td>
-                            </tr>
-                        )
-                    )
-                }
-                </tbody>
-            </Table>
         </div>
 
         )
