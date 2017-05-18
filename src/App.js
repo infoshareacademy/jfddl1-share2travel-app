@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 // import './App.css';
+import Popup from './Popup'
 
 import {
   BrowserRouter as Router,
@@ -39,6 +40,8 @@ const App = (props) => (
           links={links}
           toggleSidebar={props.toggleSidebar}
         />
+
+        <Popup/>
 
         <Row>
           <Col md={12}>
