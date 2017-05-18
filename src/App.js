@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import './App.css';
 import Karola from'./Karola';
@@ -12,6 +13,11 @@ import Product from './Product'
 // import Navbar from './Navbar';
 // import Logo from './Logo'
 
+
+// import './App.css';
+import Popup from './Popup'
+
+
 import {
   BrowserRouter as Router,
   Route
@@ -25,8 +31,7 @@ import { connect } from 'react-redux'
 
 import Home from './Home'
 import About from './About'
-// import Topics from './Topics'
-// import Szukaj from './Szukaj'
+
 
 import BurgerMenuWrapper from './BurgerMenuWrapper'
 import TopNavigation from './TopNavigation'
@@ -52,13 +57,14 @@ const App = (props) => (
           toggleSidebar={props.toggleSidebar}
         />
 
+        <Popup/>
+
         <Row>
           <Col md={12}>
             <Route exact path="/" component={Karola}/>
             <Route path="/:productId" component={Product}/>
             <Route path="/about" component={About}/>
-            {/*<Route path="/topics" component={Topics}/>*/}
-            {/*<Route component={Szukaj}/>*/}
+
           </Col>
         </Row>
       </Grid>

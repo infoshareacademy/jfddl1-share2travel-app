@@ -1,15 +1,23 @@
 body {
-  /*background-image: url("img/hexellence.png");*/
-  background-image: url("./img/img1.png");
-  /*background-color: #666666;*/
-
-  /*background-image:linear-gradient(white, #666666);*/
+  background-image: url("./img/img2.png");
+  background-position: center;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
-
 }
 .navbar{
-  background-color: #C0C0C0;
+  background-color: #DDDDDD;
   background-image: none;
+}
+.modal-body{
+  background-color: #DDDDDD;
+  color: black;
+}
+.modal-header{
+  background-color: #666666;
+  color: white;
+}
+.modal-footer{
+  background-color: #666666;
+  color: black;
 }
