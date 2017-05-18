@@ -3,6 +3,8 @@ import { Grid, Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
 import Chart from './Chart'
 import './Comp.css'
 
+const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href);
+
 class Comp extends React.Component{
     render(){
         return (
@@ -22,6 +24,7 @@ class Comp extends React.Component{
                         Materiał: Soft<br/>
                         Producent: Schinner Group<br/>
                         </p>
+                        <div class="fb-share-button" data-href="http://app.share2travel.jfddl1.is-academy.pl/" data-layout="button" data-size="large" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href={face}>Udostępnij</a></div>
                     </Col>
                     <Col className='firstRowButtons' lg={4}>
                         <ButtonToolbar>
