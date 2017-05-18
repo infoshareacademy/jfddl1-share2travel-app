@@ -3,8 +3,8 @@ import persistState from 'redux-localstorage'
 import thunk from 'redux-thunk'
 
 import sidebar from './state/sidebar'
-import smartCounter from './state/smartCounter'
-import students from './state/students'
+// import smartCounter from './state/smartCounter'
+// import students from './state/students'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -17,8 +17,8 @@ const enhancer = composeEnhancers(
 
 const reducer = combineReducers({
   sidebar: sidebar,
-  smartCounter: smartCounter,
-  students: students
+  // smartCounter: smartCounter,
+  // students: students
 })
 
 const store = createStore(
