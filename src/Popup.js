@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Popover,
   Tooltip,
-  // OverlayTrigger,
+
   Modal,
   Button
 } from 'react-bootstrap'
