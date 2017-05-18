@@ -15,7 +15,7 @@ class Comp extends React.Component{
 
                 <Row className='vertical-align'>
                     <Col lg={4}>
-                        <img src='shoe.jpg' alt=''/>
+                        <img src={process.env.PUBLIC_URL + '/shoe.jpg'} alt=''/>
                     </Col>
                     <Col className='opis' lg={4}>
                         <h1>Opis produktu</h1>
@@ -30,31 +30,31 @@ class Comp extends React.Component{
                     <Col className='firstRowButtons' lg={4}>
                         <ButtonToolbar>
                             <Button bsStyle="info" id='but1' >
-                                <img className='left' src='nike.png' alt=''/>
+                                <img className='left' src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                                 <span className='price'>
                                     {(losowy-20)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but2' >
-                                <img src='nike.png' alt=''/>
+                                <img src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                                 <span className='price'>
                                     {(losowy-30)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but3' >
-                                <img src='nike.png' alt=''/>
+                                <img src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                                 <span className='price'>
                                     {(losowy-40)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but4' >
-                                <img src='nike.png' alt=''/>
+                                <img src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                                 <span className='price'>
                                     {(losowy-50)+' zł'}
                                 </span>
                             </Button>
                             <Button bsStyle="info" id='but5' >
-                                <img className='left' src='nike.png' alt=''/>
+                                <img className='left' src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                                 <span className='price'>
                                   {(losowy-60)+' zł'}
                                 </span>
