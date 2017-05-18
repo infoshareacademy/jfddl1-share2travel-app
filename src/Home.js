@@ -26,7 +26,7 @@ const Home = React.createClass({
   render: function () {
     return (
       <div>
-        <h1>TIME</h1>
+        <h1></h1>
         {/*<p>Current time: {this.state.time.toTimeString()}</p>*/}
       </div>
     )

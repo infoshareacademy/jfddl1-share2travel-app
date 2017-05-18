@@ -12,13 +12,13 @@ import {
   IndexLinkContainer
 } from 'react-router-bootstrap'
 
-import logo from './logo1.svg'
+
 
 const TopNavigation = (props) => (
   <Navbar>
     <Navbar.Header>
       <Navbar.Brand>
-        <Link to="/"><img src={logo} height={20} alt=""/></Link>
+        <Link to="/"><img src={process.env.PUBLIC_URL + '/favicon.jpg'} height={20} alt=""/></Link>
       </Navbar.Brand>
     </Navbar.Header>
     <Nav>
@@ -37,7 +37,7 @@ const TopNavigation = (props) => (
         event.preventDefault()
         props.toggleSidebar(true)
       }}>
-        <Glyphicon glyph="align-right" /> Toggle sidenav
+        <Glyphicon glyph="align-right" /> Menu
       </NavItem>
     </Nav>
   </Navbar>

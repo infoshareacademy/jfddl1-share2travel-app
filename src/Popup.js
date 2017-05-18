@@ -2,14 +2,14 @@ import React from 'react'
 import {
   Popover,
   Tooltip,
-  OverlayTrigger,
+
   Modal,
   Button
 } from 'react-bootstrap'
 
 class Popup extends React.Component {
   state = {
-    showModal: false
+    showModal: true
   }
 
   close = () => this.setState({ showModal: false })
@@ -19,12 +19,10 @@ class Popup extends React.Component {
   render = () => {
     const popover = (
       <Popover id="modal-popover" title="popover">
-        very popover. such engagement
       </Popover>
     );
     const tooltip = (
       <Tooltip id="modal-tooltip">
-        wow.
       </Tooltip>
     );
 
@@ -32,27 +30,27 @@ class Popup extends React.Component {
       <div>
 
         <Button
-          bsStyle="primary"
-          bsSize="large"
+          bsStyle="info"
+          bsSize="medium"
           onClick={this.open}
         >
-          Instrukcja
+          Instrukcja korzystania z aplikacji
         </Button>
 
         <Modal show={this.state.showModal} onHide={this.close}>
           <Modal.Header closeButton>
-            <Modal.Title>Witaj Użytkowniku</Modal.Title>
+            <Modal.Title >Witaj Użytkowniku !</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <h4>Instrukcja korzystania z aplikacji</h4>
-            <p>Aplikcja 'porównywarka cen' pomoże w łatwy i przystępny sposób porównć cenyi produkty</p>
+            <p>Aplikcja 'porównywarka cen' pomoże w łatwy i przystępny sposób porównć ceny i produkty.</p>
 
-            <h4>Powodzenia wędrowcze</h4>
+            <h4>Powodzenia użytkowniku !</h4>
             <p>Pamiętaj zawsze możesz tu wrócić !</p>
 
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.close}>Close</Button>
+            <Button onClick={this.close} bsStyle="info" >Zamknij</Button>
           </Modal.Footer>
         </Modal>
       </div>
