@@ -1,6 +1,22 @@
-import React, {Component} from 'react';
+
+import React, { Component } from 'react';
+import './App.css';
+import Karola from'./Karola';
+import Product from './Product'
+// import {
+//     BrowserRouter as Router,
+//     Route
+// } from 'react-router-dom'
+// import SmartCounter from './SmartCounter'
+
+// import Popup from './Popup';
+// import Navbar from './Navbar';
+// import Logo from './Logo'
+
+
 // import './App.css';
 import Popup from './Popup'
+
 
 import {
   BrowserRouter as Router,
@@ -45,7 +61,8 @@ const App = (props) => (
 
         <Row>
           <Col md={12}>
-            <Route exact path="/" component={Home}/>
+            <Route exact path="/" component={Karola}/>
+            <Route path="/:productId" component={Product}/>
             <Route path="/about" component={About}/>
 
           </Col>

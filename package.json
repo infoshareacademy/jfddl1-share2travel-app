@@ -6,6 +6,8 @@
     "admin-lte": "^2.3.11",
     "bootstrap": "^3.3.7",
     "react": "^15.5.4",
+    "react-addons-css-transition-group": "^15.5.2",
+    "react-addons-transition-group": "^15.5.2",
     "react-bootstrap": "^0.31.0",
     "react-burger-menu": "^2.0.2",
     "react-dom": "^15.5.4",
@@ -14,7 +16,8 @@
     "react-router-dom": "^4.1.1",
     "redux": "^3.6.0",
     "redux-localstorage": "^0.4.1",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "reactstrap": "^4.6.1"
   },
   "devDependencies": {
     "react-scripts": "0.9.5",
