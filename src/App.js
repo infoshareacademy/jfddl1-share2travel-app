@@ -1,6 +1,5 @@
 
 import React, { Component } from 'react';
-import './App.css';
 import Karola from'./Karola';
 import Product from './Product'
 // import {
