@@ -1,7 +1,5 @@
 import React from 'react'
 import {
-  Popover,
-  Tooltip,
   Image,
   Modal,
   Button
@@ -17,14 +15,14 @@ class Popup extends React.Component {
   open = () => this.setState({ showModal: true })
 
   render = () => {
-    const popover = (
-      <Popover id="modal-popover" title="popover">
-      </Popover>
-    );
-    const tooltip = (
-      <Tooltip id="modal-tooltip">
-      </Tooltip>
-    );
+    // const popover = (
+    //   <Popover id="modal-popover" title="popover">
+    //   </Popover>
+    // );
+    // const tooltip = (
+    //   <Tooltip id="modal-tooltip">
+    //   </Tooltip>
+    // );
 
     return (
       <div>

@@ -7,7 +7,7 @@ import GenericTable from './GenericTable'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'admin-lte/dist/css/AdminLTE.min.css'
 
-import { Table } from 'react-bootstrap'
+// import { Table } from 'react-bootstrap'
 
 import './Karola.css';
 
