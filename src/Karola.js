@@ -49,13 +49,13 @@ class Karola extends Component {
               data={
                 this.state.products.filter(
                   item => this.state.searchPhrase === '' ?
-                    true : item.product.includes(this.state.searchPhrase)
+                    true : item.productName.includes(this.state.searchPhrase)
                 ).sort(
                   (a, b) => a.price - b.price
                 )}
               config={[
                 {
-                  name: 'product',
+                  name: 'productName',
                   label: 'products'
                 },
                 {

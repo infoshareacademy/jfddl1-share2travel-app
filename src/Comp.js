@@ -4,7 +4,6 @@ import Chart from './Chart'
 import './Comp.css'
 
 const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href);
-const losowy = Math.round(Math.random() * (50) + 200);
 
 class Comp extends React.Component {
   constructor(props) {
@@ -35,7 +34,7 @@ class Comp extends React.Component {
 
     return product === null ? <p>Ładowanie produktu</p> : (
       <Grid>
-        <Panel className='Comp-center' bsStyle="primary" header={product.product}>
+        <Panel className='Comp-center' bsStyle="primary" header={product.productName}>
         </Panel>
 
         <Row className='Comp-vertical-align'>
@@ -44,7 +43,17 @@ class Comp extends React.Component {
           </Col>
           <Col className='Comp-opis' lg={4}>
             <h1 className="Comp-h1">Opis produktu</h1>
-            <p>{console.log(productId)}</p>
+            <p>
+
+              Typ: {product.product}<br/>
+              Nazwa: {product.productName}<br/>
+              Producent: {product.producer}<br/>
+              Kategoria: {product.department}<br/>
+              Materiał: {product.productMaterial}<br/>
+              Kolor: {product.color}
+
+
+            </p>
             <div className="fb-share-button" data-href="{face}" data-layout="button" data-size="large"
                  data-mobile-iframe="false"><a className="fb-xfbml-parse-ignore" target="_blank"
                                                href={face}>Udostępnij</a></div>
@@ -54,32 +63,20 @@ class Comp extends React.Component {
               <Button className="Comp-button" bsStyle="info">
                 <img className='Comp-left Comp-img' src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                 <span className='Comp-price'>
-                                    {(losowy - 20) + ' zł'}
-                                </span>
+                {(parseFloat(product.price)) + ' zł'}
+                </span>
               </Button>
               <Button className="Comp-button" bsStyle="info">
                 <img className="Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                 <span className='Comp-price'>
-                                    {(losowy - 30) + ' zł'}
-                                </span>
+                {(parseFloat(product.price) + 15) + ' zł'}
+                </span>
               </Button>
               <Button className="Comp-button" bsStyle="info">
                 <img className="Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
                 <span className='Comp-price'>
-
-                                </span>
-              </Button>
-              <Button className="Comp-button" bsStyle="info">
-                <img className="Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
-                <span className='Comp-price'>
-                                    {(losowy - 50) + ' zł'}
-                                </span>
-              </Button>
-              <Button className="Comp-button" bsStyle="info">
-                <img className='Comp-left Comp-img' src={process.env.PUBLIC_URL + '/nike.png'} alt=''/>
-                <span className='Comp-price'>
-                                  {(losowy - 60) + ' zł'}
-                                </span>
+                {(parseFloat(product.price) + 20) + ' zł'}
+                </span>
               </Button>
             </ButtonToolbar>
           </Col>
@@ -88,7 +85,12 @@ class Comp extends React.Component {
         <Row>
           <Col className='Comp-wykresik' lg={6}>
             <Chart
-              series={[{data: [losowy, losowy - 10, losowy, losowy - 30, losowy - 30, losowy - 50, losowy - 60]}]}/>
+              series={[{data: [0,0,0,0,0,0,0].map(item => parseFloat(product.price)).map((item, index, array) => {
+                if (index === 0) {
+                  return item
+                }
+                return item + Math.round(Math.random() * 10) - 5
+              }).reverse()}]}/>
           </Col>
         </Row>
       </Grid>
