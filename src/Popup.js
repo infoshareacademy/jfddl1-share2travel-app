@@ -43,7 +43,7 @@ class Popup extends React.Component {
           </Modal.Header>
           <Modal.Body>
             <h4>Instrukcja korzystania z aplikacji</h4>
-            <p>Aplikcja 'porównywarka cen' pomoże w łatwy i przystępny sposób porównć ceny i produkty.</p>
+            <p>Aplikcja ToBuy pomoże w łatwy i przystępny sposób porównć ceny i produkty.</p>
 
             <h4>Powodzenia użytkowniku !</h4>
             <p>Pamiętaj zawsze możesz tu wrócić !</p>
