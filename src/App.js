@@ -65,6 +65,7 @@ const App = (props) => (
             <Route path="/Karola" component={Karola}/>
             {/*<Route path="/about" component={About}/>*/}
             <Route path="/Comp" component={Comp}/>
+            <Route path="/products/:productId" component={Comp}/>
             <Route path="/Login" component={Login}/>
           </Col>
         </Row>

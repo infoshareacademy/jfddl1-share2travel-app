@@ -26,7 +26,7 @@ const GenericTable = (props) => (
                   <td key={index}>
                     {
                       props.linked === true ?
-                        <Link to={'/Comp'}>
+                        <Link to={props.linkPrefix + '/' + dataItem.uid}>
                           {dataItem[name]}
                         </Link> :
                         dataItem[name]
