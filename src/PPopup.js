@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 import './Login.css';
 import { Button, Modal, Glyphicon} from 'react-bootstrap'
 
-const Popup = React.createClass({
+class PPopup extends React.Component{
   render() {
     return (
       <Modal {...this.props} bsSize="large" aria-labelledby="contained-modal-title-lg">
@@ -24,6 +24,6 @@ const Popup = React.createClass({
       </Modal>
     );
   }
-});
+};
 
-export default Popup;
+export default PPopup;
