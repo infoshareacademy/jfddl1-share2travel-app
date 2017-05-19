@@ -14,6 +14,7 @@ import Karola from'./Karola';
 
 
 // import './App.css';
+import Comp from './Comp'
 import Popup from './Popup'
 
 
@@ -39,7 +40,7 @@ const links = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
-  // { path: '/topics', label: 'Topics' },
+  { path: '/login', label: 'Login' },
 
 ]
 
@@ -62,6 +63,8 @@ const App = (props) => (
             <Route exact path="/" component={Popup}/>
             <Route path="/Karola" component={Karola}/>
             <Route path="/about" component={About}/>
+            <Route path="/Comp" component={Comp}/>
+            <Route path="/Login"/>
           </Col>
         </Row>
       </Grid>

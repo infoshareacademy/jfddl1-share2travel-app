@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Table } from 'react-bootstrap'
+// import Comp from "./Comp";
 // import Comp from './Comp'
 
 
@@ -29,7 +30,7 @@ const GenericTable = (props) => (
                                     <td key={index}>
                                         {
                                             props.linked === true ?
-                                                <Link to={props.linkPrefix + '/' + dataItem.id}>
+                                                <Link to={'/Comp'}>
                                                     {dataItem[name]}
                                                 </Link> :
                                                 dataItem[name]

@@ -1,50 +1,50 @@
-img{
+.Comp-img{
     width:100%;
     height: auto;
 }
-Button{
+.Comp-button{
     width:100%;
     margin: 0.4em;
 }
 
-Button img{
+.Comp-button img{
     float: left;
     height:20%;
     width:20%;
 }
-h1{
+.Comp-h1{
     border-bottom: 5px solid #337ab7;
     padding-bottom: 5px;
     color:#337ab7;
     align-items: flex-start;
 }
-p{
+.Comp-p{
     font-size:20px;
     text-align: center;
 }
-.left{
+.Comp-left{
     float:left;
 }
-.right{
+.Comp-right{
     height:10%;
     width:10%;
     float:right;
 }
-.center{
+.Comp-center{
     text-align: center;
 }
-.price{
+.Comp-price{
     font-size: 2em;
 }
-.vertical-align {
+.Comp-vertical-align {
     display: flex;
     align-items: center;
 }
-.wykresik{
+.Comp-wykresik{
     width:100%;
     height:auto;   
 }
-.opis{
+.Comp-opis{
     align-items: flex-start;
     text-align: center;
 }
