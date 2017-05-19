@@ -1,8 +1,7 @@
 
 import React, { Component } from 'react';
-import './App.css';
 import Karola from'./Karola';
-import Product from './Product'
+// import Product from './Product'
 // import {
 //     BrowserRouter as Router,
 //     Route
@@ -15,7 +14,10 @@ import Product from './Product'
 
 
 // import './App.css';
+import Comp from './Comp'
 import Popup from './Popup'
+// import PPopup from ',/PPopup'
+import Login from './Login'
 
 
 import {
@@ -25,7 +27,7 @@ import {
 import {
   Grid,
   Col,
-  Row
+  Row,
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
@@ -38,8 +40,9 @@ import TopNavigation from './TopNavigation'
 
 const links = [
   { path: '/', label: 'Home' },
-  { path: '/about', label: 'About' },
-  // { path: '/topics', label: 'Topics' },
+  // { path: '/about', label: 'About' },
+  { path: '/Karola', label: 'Wyszukaj' },
+  { path: '/Login', label: 'Login' },
 
 ]
 
@@ -57,14 +60,13 @@ const App = (props) => (
           toggleSidebar={props.toggleSidebar}
         />
 
-        <Popup/>
-
         <Row>
           <Col md={12}>
-            <Route exact path="/" component={Karola}/>
-            <Route path="/:productId" component={Product}/>
-            <Route path="/about" component={About}/>
-
+            <Route exact path="/"  component={Popup} />
+            <Route path="/Karola" component={Karola}/>
+            {/*<Route path="/about" component={About}/>*/}
+            <Route path="/Comp" component={Comp}/>
+            <Route path="/Login" component={Login}/>
           </Col>
         </Row>
       </Grid>

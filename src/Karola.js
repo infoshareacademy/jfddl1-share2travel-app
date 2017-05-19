@@ -5,7 +5,6 @@ import React, {Component} from 'react'
 import products from './data/products'
 import GenericTable from './GenericTable'
 import 'bootstrap/dist/css/bootstrap.css'
-import './App.css'
 import 'admin-lte/dist/css/AdminLTE.min.css'
 
 import { Table } from 'react-bootstrap'
