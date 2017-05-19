@@ -1,21 +1,88 @@
+
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Karola from'./Karola';
+// import Product from './Product'
+// import {
+//     BrowserRouter as Router,
+//     Route
+// } from 'react-router-dom'
+// import SmartCounter from './SmartCounter'
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
-}
+// import Popup from './Popup';
+// import Navbar from './Navbar';
+// import Logo from './Logo'
 
-export default App;
+
+// import './App.css';
+import Comp from './Comp'
+import Popup from './Popup'
+// import PPopup from ',/PPopup'
+import Login from './Login'
+
+
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
+import {
+  Grid,
+  Col,
+  Row,
+} from 'react-bootstrap'
+import { connect } from 'react-redux'
+
+import Home from './Home'
+import About from './About'
+
+
+import BurgerMenuWrapper from './BurgerMenuWrapper'
+import TopNavigation from './TopNavigation'
+
+const links = [
+  { path: '/', label: 'Home' },
+  // { path: '/about', label: 'About' },
+  { path: '/Karola', label: 'Wyszukaj' },
+  { path: '/Login', label: 'Login' },
+
+]
+
+const App = (props) => (
+  <Router>
+    <BurgerMenuWrapper
+      isOpen={props.sidebarOpen}
+      toggleSidebar={props.toggleSidebar}
+      onStateChange={(state) => props.toggleSidebar(state.isOpen)}
+      links={links}
+    >
+      <Grid>
+        <TopNavigation
+          links={links}
+          toggleSidebar={props.toggleSidebar}
+        />
+
+        <Row>
+          <Col md={12}>
+            <Route exact path="/"  component={Popup} />
+            <Route path="/Karola" component={Karola}/>
+            {/*<Route path="/about" component={About}/>*/}
+            <Route path="/Comp" component={Comp}/>
+            <Route path="/Login" component={Login}/>
+          </Col>
+        </Row>
+      </Grid>
+    </BurgerMenuWrapper>
+  </Router>
+)
+
+const mapStateToProps = state => ({
+  sidebarOpen: state.sidebar.sidebarOpen
+})
+
+const mapDispatchToProps = dispatch => ({
+  toggleSidebar: (shouldBeOpen) => dispatch({ type: 'TOGGLE_SIDEBAR', shouldBeOpen: shouldBeOpen})
+})
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(App)
