@@ -1,6 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Table } from 'react-bootstrap'
+// import Comp from './Comp'
+
+
 
 const GenericTable = (props) => (
     <Table striped bordered condensed hover>

@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
 import Karola from'./Karola';
-import Product from './Product'
+// import Product from './Product'
 // import {
 //     BrowserRouter as Router,
 //     Route
@@ -38,6 +38,7 @@ import TopNavigation from './TopNavigation'
 const links = [
   { path: '/', label: 'Home' },
   { path: '/about', label: 'About' },
+  { path: '/Karola', label: 'Wyszukaj' },
   // { path: '/topics', label: 'Topics' },
 
 ]
@@ -56,14 +57,11 @@ const App = (props) => (
           toggleSidebar={props.toggleSidebar}
         />
 
-        <Popup/>
-
         <Row>
           <Col md={12}>
-            <Route exact path="/" component={Karola}/>
-            <Route path="/:productId" component={Product}/>
+            <Route exact path="/" component={Popup}/>
+            <Route path="/Karola" component={Karola}/>
             <Route path="/about" component={About}/>
-
           </Col>
         </Row>
       </Grid>

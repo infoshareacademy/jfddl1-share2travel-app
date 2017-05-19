@@ -1,14 +1,10 @@
 import React from 'react'
+// import Comp from './Comp'
 
 
 
 const About = () => (
-  <div>
-    <h2></h2>
-
-
-
-  </div>
+  {/*<Comp/>*/}
 )
 
 export default About
