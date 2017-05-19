@@ -1,5 +1,5 @@
 
-import React, { Component } from 'react';
+import React from 'react';
 import Karola from'./Karola';
 // import Product from './Product'
 // import {
@@ -31,8 +31,7 @@ import {
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
 
-import Home from './Home'
-import About from './About'
+// import Home from './Home'
 
 
 import BurgerMenuWrapper from './BurgerMenuWrapper'

@@ -3,7 +3,7 @@
  */
 import React, { Component, } from 'react';
 import './Login.css';
-import { Grid, Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon, Navbar, NavItem, Nav} from 'react-bootstrap'
+import { Grid, Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
 import PPopup from "./PPopup";
 
 function FieldGroup({ id, label, help, ...props }) {
