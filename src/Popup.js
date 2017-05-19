@@ -2,7 +2,7 @@ import React from 'react'
 import {
   Popover,
   Tooltip,
-
+  Image,
   Modal,
   Button
 } from 'react-bootstrap'
@@ -29,6 +29,8 @@ class Popup extends React.Component {
     return (
       <div>
 
+        <Image className="center-block brand-image"  responsive src={process.env.PUBLIC_URL + '/images/brand-black.png'}/>
+        <br/>
         <Button
           bsStyle="info"
           bsSize="medium"

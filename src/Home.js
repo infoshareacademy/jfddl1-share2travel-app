@@ -26,9 +26,7 @@ const Home = React.createClass({
 
   render: function () {
     return (
-
-        <Popup/>
-
+      <Popup/>
     )
   }
 })
