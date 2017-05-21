@@ -27,6 +27,7 @@ export default connect(
                                         ).map(
                                             product => (
                                                 <span key={product.uid}>
+                                                    {product.uid}
                                                     <button
                                                         onClick={() => props.removeFromFavorites(product.uid)}
                                                     >
