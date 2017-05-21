@@ -1,6 +1,8 @@
 
 import React from 'react';
 import Karola from'./Karola';
+import FavoriteProducts from './FavoriteProducts'
+
 // import Product from './Product'
 // import {
 //     BrowserRouter as Router,
@@ -42,6 +44,7 @@ const links = [
   // { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
   { path: '/Login', label: 'Login' },
+  { path: '/FavoriteProducts', label: 'FavoriteProducts' },
 
 ]
 
@@ -67,7 +70,9 @@ const App = (props) => (
             <Route path="/Comp" component={Comp}/>
             <Route path="/products/:productId" component={Comp}/>
             <Route path="/Login" component={Login}/>
-          </Col>
+            <Route path="/FavoriteProducts" component={FavoriteProducts}/>
+
+                  </Col>
         </Row>
       </Grid>
     </BurgerMenuWrapper>

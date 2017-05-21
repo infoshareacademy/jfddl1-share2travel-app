@@ -1,12 +1,31 @@
 import React from 'react';
+import { connect } from 'react-redux'
+
+import { add,remove } from './state/favoriteProducts'
 import {Grid, Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
 import Chart from './Chart'
 import './Comp.css'
 
 const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href);
+import { fetchProducts } from './state/products'
 
+export default connect(
+    state => ({
+        products: state.products,
+        favIds: state.favoriteProducts
+    }),
+    dispatch => ({
+        fetchProducts: () => dispatch(fetchProducts()),
+        addToFavorites: (productId) => dispatch(add(productId)),
+        removeFromFavorites: (productId) => dispatch(remove(productId)),
+    })
+)(
 class Comp extends React.Component {
-  constructor(props) {
+    componentWillMount() {
+        this.props.fetchProducts()
+    }
+
+    constructor(props) {
     super(props);
     this.state = {
       searchPhrase: '',
@@ -24,6 +43,7 @@ class Comp extends React.Component {
   }
 
   render() {
+      const {addToFavorites,removeFromFavorites,favIds } = this.props
     const productId = this.props.match.params.productId;
     const products = this.state.products;
 
@@ -56,7 +76,21 @@ class Comp extends React.Component {
             </p>
             <div className="fb-share-button" data-href="{face}" data-layout="button" data-size="large"
                  data-mobile-iframe="false"><a className="fb-xfbml-parse-ignore" target="_blank"
-                                               href={face}>Udostępnij</a></div>
+                                               href={face}>Udostępnij</a>
+            <br/>
+            <br/>
+              <button onClick={()=>addToFavorites(product.uid)}
+                  disabled={favIds.includes(product.uid)}>
+                  Dodaj do ulubionych
+              </button>
+                <button
+                    onClick={() => removeFromFavorites(product.uid)}
+                    disabled={!favIds.includes(product.uid)}>
+
+                    Remove from favorites
+                </button>
+
+            </div>
           </Col>
           <Col className='Comp-firstRowButtons' lg={4}>
             <ButtonToolbar>
@@ -97,5 +131,5 @@ class Comp extends React.Component {
     )
   }
 }
+)
 
-export default Comp 
