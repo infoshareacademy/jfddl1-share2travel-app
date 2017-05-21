@@ -41,7 +41,7 @@ const links = [
   { path: '/', label: 'Home' },
   // { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/Login', label: 'Login' },
+  // { path: '/Login', label: 'Login' },
 
 ]
 
@@ -61,12 +61,12 @@ const App = (props) => (
 
         <Row>
           <Col md={12}>
-            <Route exact path="/"  component={Popup} />
+            <Route exact path="/"  component={Login} />
             <Route path="/Karola" component={Karola}/>
             {/*<Route path="/about" component={About}/>*/}
             <Route path="/Comp" component={Comp}/>
             <Route path="/products/:productId" component={Comp}/>
-            <Route path="/Login" component={Login}/>
+            <Route path="/start" component={Popup}/>
           </Col>
         </Row>
       </Grid>

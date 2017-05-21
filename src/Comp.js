@@ -33,8 +33,8 @@ class Comp extends React.Component {
       ) : null
 
     return product === null ? <p>Ładowanie produktu</p> : (
-      <Grid>
-        <Panel className='Comp-center' bsStyle="primary" header={product.productName}>
+      <div>
+        <Panel className='Comp-center Comp-panel' bsStyle="primary" header={product.productName}>
         </Panel>
 
         <Row className='Comp-vertical-align'>
@@ -93,7 +93,7 @@ class Comp extends React.Component {
               }).reverse()}]}/>
           </Col>
         </Row>
-      </Grid>
+      </div>
     )
   }
 }
