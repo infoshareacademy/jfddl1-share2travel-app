@@ -79,3 +79,35 @@
 a.cursor {
     cursor: pointer;
 }
+
+.instruction {
+    text-align: left;
+}
+.modal-header, .modal-footer {
+    background-color: #2475AC !important;
+}
+.btn-blue {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+}
+.btn-blue:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+
+}
+.btn-blue:active {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+
+}
+.btn-blue:link {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #ffffff;
+}
+input {
+    margin: 0;
+}

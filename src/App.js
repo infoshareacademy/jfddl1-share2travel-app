@@ -40,8 +40,9 @@ import TopNavigation from './TopNavigation'
 const links = [
   { path: '/', label: 'Home' },
   // { path: '/about', label: 'About' },
+    { path: '/Login', label: 'Login' },
   { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/Login', label: 'Login' },
+
 
 ]
 
@@ -60,7 +61,7 @@ const App = (props) => (
         />
 
         <Row>
-          <Col md={12}>
+          <Col lg={12}>
             <Route exact path="/"  component={Popup} />
             <Route path="/Karola" component={Karola}/>
             {/*<Route path="/about" component={About}/>*/}
@@ -68,6 +69,7 @@ const App = (props) => (
             <Route path="/products/:productId" component={Comp}/>
             <Route path="/Login" component={Login}/>
           </Col>
+
         </Row>
       </Grid>
     </BurgerMenuWrapper>

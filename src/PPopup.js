@@ -17,7 +17,7 @@ class PPopup extends React.Component{
           {this.props.content}
         </Modal.Body>
         <Modal.Footer>
-          <Button type="submit" onClick={this.props.onHide} className="btn-submit">
+          <Button type="submit" onClick={this.props.onHide} className="btn-blue">
             Zamknij <Glyphicon glyph="remove-circle"/>
           </Button>
         </Modal.Footer>

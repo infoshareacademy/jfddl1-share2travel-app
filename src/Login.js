@@ -3,7 +3,7 @@
  */
 import React, { Component, } from 'react';
 import './Login.css';
-import { Grid, Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
+import { Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
 import PPopup from "./PPopup";
 
 function FieldGroup({ id, label, help, ...props }) {
@@ -21,7 +21,7 @@ class Login extends Component {
   contentTxt = {
     modal1: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur quam vel nibh interdum, vitae tincidunt sapien dignissim. Sed mollis rhoncus aliquam. Cras enim dolor, sagittis in tortor ut, lacinia interdum lorem. Nulla vitae tempus sapien. Phasellus imperdiet dapibus ex ut dignissim. Ut id nunc non quam fringilla malesuada. Fusce egestas efficitur odio, a sodales felis suscipit ac. <br/><br/>Integer eu mi erat. Phasellus placerat et dui non ultricies. Nam nec malesuada risus. Fusce aliquet rutrum pellentesque. Aliquam auctor, diam non auctor porttitor, dui velit finibus mauris, ut laoreet diam ipsum vitae purus. Cras consequat suscipit ligula nec tempor. Integer semper, orci et mattis congue, diam tortor auctor lorem, quis semper neque eros eget ligula. Phasellus interdum mauris nec eros finibus consectetur id interdum massa.<br/><br/>Integer eu mi erat. Phasellus placerat et dui non ultricies. Nam nec malesuada risus. Fusce aliquet rutrum pellentesque. Aliquam auctor, diam non auctor porttitor, dui velit finibus mauris, ut laoreet diam ipsum vitae purus. Cras consequat suscipit ligula nec tempor. Integer semper, orci et mattis congue, diam tortor auctor lorem, quis semper neque eros eget ligula. Phasellus interdum mauris nec eros finibus consectetur id interdum massa.</p>,
     modal2: <div>
-      <p>W celu założenia konta w aplikacji To Buy wypełnij poniższe pola.</p>
+      <p>W celu założenia konta w To Buy | App wypełnij poniższe pola.</p>
       <form>
         <FieldGroup
           id="formControlsText"
@@ -77,7 +77,7 @@ class Login extends Component {
 
   render () {
     return (
-      <Grid>
+      <div>
         {/*<Navbar>*/}
           {/*<Nav className="navbar-right">*/}
             {/*<NavItem eventKey={1} href="http://www.share2travel.jfddl1.is-academy.pl"><Glyphicon glyph="home"/>  Strona główna</NavItem>*/}
@@ -131,7 +131,7 @@ class Login extends Component {
         <PPopup title={'To Buy App | Rejestracja'} show={this.state.lgShow2} onHide={()=>{this.modalClose(2)}} content={this.contentTxt.modal2}/>
         <PPopup title={'To Buy App | Odzyskiwanie hasła'} show={this.state.lgShow3} onHide={()=>{this.modalClose(3)}} content={this.contentTxt.modal3}/>
 
-      </Grid>
+      </div>
     );
   }
 

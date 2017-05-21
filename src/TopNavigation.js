@@ -13,7 +13,6 @@ import {
 } from 'react-router-bootstrap'
 
 
-
 const TopNavigation = (props) => (
   <Navbar>
     <Navbar.Header>
