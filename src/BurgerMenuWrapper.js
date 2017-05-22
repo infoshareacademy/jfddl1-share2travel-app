@@ -1,6 +1,7 @@
 import React from 'react'
-import { elastic as BurgerMenu } from 'react-burger-menu'
+import { push as BurgerMenu } from 'react-burger-menu'
 import { Link } from 'react-router-dom'
+import {Image} from 'react-bootstrap'
 
 const styles = {
   bmBurgerButton: {
@@ -36,6 +37,12 @@ const styles = {
     background: 'rgba(0, 0, 0, 0.3)'
   }
 }
+const divStyle = {
+  width:'100%',
+  height:'auto',
+  margin:'auto',
+  color:'black'
+};
 
 const BurgerMenuWrapper = (props) => (
   <div id="outer-container">
@@ -47,13 +54,16 @@ const BurgerMenuWrapper = (props) => (
       pageWrapId={ "page-wrap" }
       outerContainerId={ "outer-container" }
     >
-      {
-        props.links.map(
-          (link, index) => (
-            <Link key={index} to={link.path} onClick={() => props.toggleSidebar(false)}>{link.label}</Link>
-          )
-        )
-      }
+      <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/profile.png'}/>
+      {/*{*/}
+        {/*props.links.map(*/}
+          {/*(link, index) => (*/}
+            {/*<Link key={index} to={link.path} onClick={() => props.toggleSidebar(false)}>{link.label}</Link>*/}
+          {/*)*/}
+        {/*)*/}
+      {/*}*/}
+      <br/>
+      <p style={divStyle}>Karolina Karolina</p>
     </BurgerMenu>
     <div id="page-wrap">
       {

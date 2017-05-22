@@ -33,11 +33,13 @@ const TopNavigation = (props) => (
           )
         )
       }
+    </Nav>
+    <Nav pullRight>
       <NavItem onClick={event => {
         event.preventDefault()
         props.toggleSidebar(true)
       }}>
-        <Glyphicon glyph="align-right" /> Menu
+        <Glyphicon glyph="user" /> Profil
       </NavItem>
     </Nav>
   </Navbar>

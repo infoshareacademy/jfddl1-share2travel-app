@@ -53,11 +53,12 @@ const App = (props) => (
       onStateChange={(state) => props.toggleSidebar(state.isOpen)}
       links={links}
     >
-      <Grid>
+
         <TopNavigation
           links={links}
           toggleSidebar={props.toggleSidebar}
         />
+      <Grid>
 
         <Row>
           <Col md={12}>
