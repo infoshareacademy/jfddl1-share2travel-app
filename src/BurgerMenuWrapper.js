@@ -1,6 +1,6 @@
 import React from 'react'
 import { push as BurgerMenu } from 'react-burger-menu'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import {Image} from 'react-bootstrap'
 
 const styles = {
