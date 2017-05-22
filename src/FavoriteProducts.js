@@ -24,24 +24,38 @@ export default connect(
                 {this.props
                     .favIds
                     .map(uid => (
-                        <p key={uid}>
-                            {this.props.products.data !== null ? 
-                                this.props
-                                    .products
-                                    .data
-                                    .products
-                                    .filter(product => product.uid === uid)
-                                    .map(product => (
-                                        <span key={product.uid}>
-                                            {product.productName}
-                                            <button onClick={() => this.props.removeFromFavorites(product.uid)}>
-                                                Remove
-                        </button>
-                                        </span>
-                                    ))
-                                : null
-                            }
-                        </p>
+                        <div key={uid}>
+                            <p>
+                                {this.props.products.data !== null ? 
+                                    this.props
+                                        .products
+                                        .data
+                                        .products
+                                        .filter(product => product.uid === uid)
+                                        .map(product => (
+                                            <span key={product.uid}>
+                                                {product.productName}
+                                                <button onClick={() => this.props.removeFromFavorites(product.uid)}>
+                                                    Remove
+                            </button>
+                                            </span>
+                                        ))
+                                    : null
+                                }
+                            </p>
+                            <p>
+                                Data From New DB ;)
+                                {this.props.products.data !== null ? 
+                                            <span>
+                                                {this.props.products.data.productsByUid[uid].productName}
+                                                <button onClick={() => this.props.removeFromFavorites(uid)}>
+                                                    Remove
+                            </button>
+                                            </span>
+                                    : null
+                                }
+                            </p>
+                        </div>
                     ))
                 }
             </div>
