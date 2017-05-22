@@ -1,6 +1,8 @@
 
 import React from 'react';
 import Karola from'./Karola';
+import FavoriteProducts from './FavoriteProducts'
+
 // import Product from './Product'
 // import {
 //     BrowserRouter as Router,
@@ -41,8 +43,7 @@ const links = [
   { path: '/', label: 'Home' },
   // { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/Login', label: 'Login' },
-
+  { path: '/FavoriteProducts', label: 'FavoriteProducts' },
 ]
 
 const App = (props) => (
@@ -53,20 +54,22 @@ const App = (props) => (
       onStateChange={(state) => props.toggleSidebar(state.isOpen)}
       links={links}
     >
-      <Grid>
+
         <TopNavigation
           links={links}
           toggleSidebar={props.toggleSidebar}
         />
+      <Grid>
 
         <Row>
           <Col md={12}>
-            <Route exact path="/"  component={Popup} />
+            <Route exact path="/"  component={Login} />
             <Route path="/Karola" component={Karola}/>
             {/*<Route path="/about" component={About}/>*/}
             <Route path="/Comp" component={Comp}/>
             <Route path="/products/:productId" component={Comp}/>
-            <Route path="/Login" component={Login}/>
+            <Route path="/start" component={Popup}/>
+            <Route path="/FavoriteProducts" component={FavoriteProducts}/>
           </Col>
         </Row>
       </Grid>

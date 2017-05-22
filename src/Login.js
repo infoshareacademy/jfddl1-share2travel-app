@@ -3,8 +3,9 @@
  */
 import React, { Component, } from 'react';
 import './Login.css';
-import { Grid, Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
+import {Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
 import PPopup from "./PPopup";
+import {Link} from 'react-router-dom'
 
 function FieldGroup({ id, label, help, ...props }) {
   return (
@@ -77,7 +78,7 @@ class Login extends Component {
 
   render () {
     return (
-      <Grid>
+      <div>
         {/*<Navbar>*/}
           {/*<Nav className="navbar-right">*/}
             {/*<NavItem eventKey={1} href="http://www.share2travel.jfddl1.is-academy.pl"><Glyphicon glyph="home"/>  Strona główna</NavItem>*/}
@@ -119,8 +120,8 @@ class Login extends Component {
               type="password"
             />
 
-            <Button type="submit" className="center-block btn-submit">
-              Zaloguj się <Glyphicon glyph="arrow-down"/>
+            <Button className="center-block btn-submit"><Link to={'/start'}>
+              Zaloguj się <Glyphicon glyph="arrow-down"/></Link>
             </Button>
           </form>
           <p><Glyphicon glyph="user"/>  Nie masz jeszcze konta? <a className="cursor" onClick={()=>{this.modalOpen(2)}}>Zarejestruj się !</a></p>
@@ -131,7 +132,7 @@ class Login extends Component {
         <PPopup title={'To Buy App | Rejestracja'} show={this.state.lgShow2} onHide={()=>{this.modalClose(2)}} content={this.contentTxt.modal2}/>
         <PPopup title={'To Buy App | Odzyskiwanie hasła'} show={this.state.lgShow3} onHide={()=>{this.modalClose(3)}} content={this.contentTxt.modal3}/>
 
-      </Grid>
+      </div>
     );
   }
 
