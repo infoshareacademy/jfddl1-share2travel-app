@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
+import {Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
 import Chart from './Chart'
 import './Comp.css'
 
