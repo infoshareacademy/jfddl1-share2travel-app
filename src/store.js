@@ -4,6 +4,7 @@ import thunk from 'redux-thunk'
 
 import sidebar from './state/sidebar'
 import favoriteProducts from './state/favoriteProducts'
+import products from './state/products'
 
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
@@ -17,8 +18,8 @@ const enhancer = composeEnhancers(
 
 const reducer = combineReducers({
   sidebar: sidebar,
-    favoriteProducts:favoriteProducts,
-
+  favoriteProducts: favoriteProducts,
+  products: products
 })
 
 const store = createStore(

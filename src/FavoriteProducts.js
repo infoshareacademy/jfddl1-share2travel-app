@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { remove } from './state/favoriteProducts'
+import { fetchProducts } from './state/products'
 
 export default connect(
     state => ({
@@ -9,39 +10,41 @@ export default connect(
         favIds: state.favoriteProducts
     }),
     dispatch => ({
-        removeFromFavorites: (productId) => dispatch(remove(productId))
+        fetchProducts: () => dispatch(fetchProducts()),
+        removeFromFavorites: (productId) => dispatch(remove(productId)),
     })
-)(
-    function favoriteProducts(props) {
+)(class FavoriteProducts extends React.Component {
+    componentWillMount() {
+        this.props.fetchProducts()
+    }
+    render() {
         return (
             <div>
                 <h1>favorite Products</h1>
-                {
-                    props.favIds.map(
-                        uid => (
-                            <p key={uid}>
-                                {
-                                    props.products.data !== null ?
-                                        props.products.data.filter(
-                                            product => product.uid === uid
-                                        ).map(
-                                            product => (
-                                                <span key={product.uid}>
-                                                    {product.uid}
-                                                    <button
-                                                        onClick={() => props.removeFromFavorites(product.uid)}
-                                                    >
-                              Remove
-                            </button>
-                          </span>
-                                            )
-                                        ) : null
-                                }
-                            </p>
-                        )
-                    )
+                {this.props
+                    .favIds
+                    .map(uid => (
+                        <p key={uid}>
+                            {this.props.products.data !== null ? 
+                                this.props
+                                    .products
+                                    .data
+                                    .products
+                                    .filter(product => product.uid === uid)
+                                    .map(product => (
+                                        <span key={product.uid}>
+                                            {product.name}
+                                            <button onClick={() => this.props.removeFromFavorites(product.uid)}>
+                                                Remove
+                        </button>
+                                        </span>
+                                    ))
+                                : null
+                            }
+                        </p>
+                    ))
                 }
             </div>
         )
     }
-)
+})
