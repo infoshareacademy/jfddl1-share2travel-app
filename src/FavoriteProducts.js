@@ -18,6 +18,7 @@ export default connect(
         this.props.fetchProducts()
     }
     render() {
+
         return (
             <div>
                 <h1>favorite Products</h1>
