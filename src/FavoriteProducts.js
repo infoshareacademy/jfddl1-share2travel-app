@@ -24,26 +24,9 @@ export default connect(
                 {this.props
                     .favIds
                     .map(uid => (
-                        <div key={uid}>
-                            <p>
-                                {this.props.products.data !== null ? 
-                                    this.props
-                                        .products
-                                        .data
-                                        .products
-                                        .filter(product => product.uid === uid)
-                                        .map(product => (
-                                            <span key={product.uid}>
-                                                {product.productName}
-                                                <button onClick={() => this.props.removeFromFavorites(product.uid)}>
-                                                    Remove
-                            </button>
-                                            </span>
-                                        ))
-                                    : null
-                                }
-                            </p>
-                            <p>
+
+
+                            <p key={uid}>
                                 Data From New DB ;)
                                 {this.props.products.data !== null ? 
                                             <span>
@@ -55,7 +38,7 @@ export default connect(
                                     : null
                                 }
                             </p>
-                        </div>
+
                     ))
                 }
             </div>
