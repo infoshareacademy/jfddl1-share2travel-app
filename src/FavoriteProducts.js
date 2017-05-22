@@ -33,7 +33,7 @@ export default connect(
                                     .filter(product => product.uid === uid)
                                     .map(product => (
                                         <span key={product.uid}>
-                                            {product.name}
+                                            {product.productName}
                                             <button onClick={() => this.props.removeFromFavorites(product.uid)}>
                                                 Remove
                         </button>
