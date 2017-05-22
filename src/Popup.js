@@ -31,7 +31,6 @@ class Popup extends React.Component {
         <br/>
         <Button
           bsStyle="info"
-          bsSize="medium"
           onClick={this.open}
         >
           Instrukcja korzystania z aplikacji
