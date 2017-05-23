@@ -43,7 +43,7 @@ const links = [
   { path: '/', label: 'Home' },
   // { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/FavoriteProducts', label: 'FavoriteProducts' },
+  { path: '/FavoriteProducts', label: 'Ulubione' },
 ]
 
 const App = (props) => (
