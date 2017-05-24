@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import SwitchButton from 'react-switch-button';
 
 import { add,remove } from './state/favoriteProducts'
 import {Grid, Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
@@ -79,16 +80,18 @@ class Comp extends React.Component {
                                                href={face}>Udostępnij</a>
             <br/>
             <br/>
-              <button onClick={()=>addToFavorites(product.uid)}
-                  disabled={favIds.includes(product.uid)}>
-                  Dodaj do ulubionych
-              </button>
-                <button
-                    onClick={() => removeFromFavorites(product.uid)}
-                    disabled={!favIds.includes(product.uid)}>
+              {/*<button onClick={()=>addToFavorites(product.uid)}*/}
+                  {/*disabled={favIds.includes(product.uid)}>*/}
+                  {/*Dodaj do ulubionych*/}
+              {/*</button>*/}
+                {/*<button*/}
+                    {/*onClick={() => removeFromFavorites(product.uid)}*/}
+                    {/*disabled={!favIds.includes(product.uid)}>*/}
 
-                    Remove from favorites
-                </button>
+                    {/*Remove from favorites*/}
+                {/*</button>*/}
+              <SwitchButton onChange={()=>addToFavorites(product.uid)} name="switch-1t" theme="rsbc-switch-button-flat-square" defaultChecked={true}
+                            />
 
             </div>
           </Col>
