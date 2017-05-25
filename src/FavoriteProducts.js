@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-
 import { remove } from './state/favoriteProducts'
 import { fetchProducts } from './state/products'
 
