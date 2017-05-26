@@ -120,8 +120,10 @@ class Login extends Component {
               type="password"
             />
 
-            <Button className="center-block btn-submit"><Link to={'/start'}>
-              Zaloguj się <Glyphicon glyph="arrow-down"/></Link>
+            <Button className="center-block btn-submit">
+              <Link to={'/'}>
+              Zaloguj się <Glyphicon glyph="arrow-down"/>
+              </Link>
             </Button>
           </form>
           <p><Glyphicon glyph="user"/>  Nie masz jeszcze konta? <a className="cursor" onClick={()=>{this.modalOpen(2)}}>Zarejestruj się !</a></p>
