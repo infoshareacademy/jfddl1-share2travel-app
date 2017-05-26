@@ -23,7 +23,7 @@ const links = [
   { path: '/Karola', label: 'Wyszukaj' },
   { path: '/FavoriteProducts', label: 'FavoriteProducts' },
 ]
-const isLogged = true;
+var isLogged = true;
 
 const App = (props) => (
   <Router>
