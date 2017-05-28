@@ -21,19 +21,19 @@ export default connect(
 
         return (
             <div>
-                <h1>favorite Products</h1>
+                <h1>Ulubione</h1>
                 {this.props
                     .favIds
                     .map(uid => (
 
 
                             <p key={uid}>
-                                Data From New DB ;)
+
                                 {this.props.products.data !== null ? 
                                             <span>
-                                                {this.props.products.data.productsByUid[uid].productName}
+                                                {this.props.products.data.productsByUid[uid].productName + '  '}
                                                 <button onClick={() => this.props.removeFromFavorites(uid)}>
-                                                    Remove
+                                                    Usuń
                             </button>
                                             </span>
                                     : null

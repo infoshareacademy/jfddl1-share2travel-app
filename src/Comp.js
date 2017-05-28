@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'
+import Toggle from 'react-toggle'
 
 import { add,remove } from './state/favoriteProducts'
 import {Grid, Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
@@ -87,8 +88,24 @@ class Comp extends React.Component {
                     onClick={() => removeFromFavorites(product.uid)}
                     disabled={!favIds.includes(product.uid)}>
 
-                    Remove from favorites
+                   Usuń
                 </button>
+                <div>
+                    <label>
+
+                        <Toggle
+                            defaultChecked={this.state.eggsAreReady}
+                            aria-label='Dodaj do ulubionych'
+                            onChange={this.handleEggsChange}
+
+                                // handleChange=() => {this.state.baconIsReady? addToFavorites(product.uid):removeFromFavorites(product.uid)}
+
+
+                        /> <br/>
+                        <p>Dodaj do ulubionych</p>
+
+                    </label>
+                </div>
 
             </div>
           </Col>

@@ -44,7 +44,7 @@ const links = [
   // { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
   { path: '/Login', label: 'Login' },
-  { path: '/FavoriteProducts', label: 'FavoriteProducts' },
+  { path: '/FavoriteProducts', label: 'Ulubione' },
 
 ]
 
