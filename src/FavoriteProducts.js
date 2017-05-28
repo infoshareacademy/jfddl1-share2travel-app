@@ -30,11 +30,13 @@ export default connect(
                             <p key={uid}>
 
                                 {this.props.products.data !== null ? 
-                                            <span>
-                                                {this.props.products.data.productsByUid[uid].productName + '  '}
-                                                <button onClick={() => this.props.removeFromFavorites(uid)}>
+                                            <span> <ul class="Comp-list">
+                                               <li> {this.props.products.data.productsByUid[uid].productName + '  '}
+                                                   <button onClick={() => this.props.removeFromFavorites(uid)}>
                                                     Usuń
-                            </button>
+                                                   </button>
+                                               </li>
+                                            </ul>
                                             </span>
                                     : null
                                 }

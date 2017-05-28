@@ -49,6 +49,11 @@
     text-align: center;
 }
 
+ul li{
+    text-align: left;
+    margin-right: auto;
+    margin-left:auto;
+}
 .react-toggle {
     touch-action: pan-x;
 

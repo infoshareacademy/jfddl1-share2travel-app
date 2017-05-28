@@ -98,7 +98,7 @@ class Comp extends React.Component {
                             aria-label='Dodaj do ulubionych'
                             onChange={this.handleEggsChange}
 
-                                 handleChange=() => {this.state.eggsAreReady? addToFavorites(product.uid):removeFromFavorites(product.uid)}
+                                 /*handleChange=() => {this.state.eggsAreReady? addToFavorites(product.uid):removeFromFavorites(product.uid)}*/
 
 
                         /> <br/>
