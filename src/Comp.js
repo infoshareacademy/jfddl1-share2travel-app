@@ -93,15 +93,18 @@ export default connect(
                 <div>
                   <label>
 
-                    <Toggle
-                      defaultChecked={this.state.eggsAreReady}
-                      aria-label='Dodaj do ulubionych'
-                      onChange={this.handleEggsChange}
-
-                      /*handleChange=() => {this.state.eggsAreReady? addToFavorites(product.uid):removeFromFavorites(product.uid)}*/
-
-
-                    /> <br/>
+                    {
+                      favIds.includes(product.uid) ?
+                        <Toggle
+                          checked={true}
+                          aria-label='Usuń z ulubionych'
+                          onChange={() => removeFromFavorites(product.uid)}/> :
+                        <Toggle
+                          checked={false}
+                          aria-label='Dodaj do ulubionych'
+                          onChange={() => addToFavorites(product.uid)}/>
+                    }
+                    <br/>
                     <p>Dodaj do ulubionych</p>
 
                   </label>
