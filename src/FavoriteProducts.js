@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { remove } from './state/favoriteProducts'
 import { fetchProducts } from './state/products'
 import {Image, Button} from 'react-bootstrap'
+import { Link } from 'react-router-dom'
 
 import './Comp.css'
 const divStyle = {
@@ -31,34 +32,34 @@ export default connect(
                 <h1>Ulubione</h1>
                 {this.props
                     .favIds
-                    .map(uid => (
+                    .map((uid) => {
 
+                      let link = 'products/'+uid;
+                      return <div key={uid} className="Comp-div-FavoriteProducts">
 
-                            <div key={uid} className="Comp-div-FavoriteProducts">
+                        {this.props.products.data !== null ?
+                          <div className="Comp-FP-div">
 
-                                {this.props.products.data !== null ?
-                                            <div className="Comp-FP-div">
+                            <ul>
+                              <div className="Comp-list">
+                                <li>
+                                  <Link to={link}>{ this.props.products.data.productsByUid[uid].productName + '  '}</Link>
+                                  <Image style={divStyle} className="Profile-center"
+                                         src={process.env.PUBLIC_URL + '/images/comp1.png'}/>
+                                  <Button bsStyle="info" onClick={() => this.props.removeFromFavorites(uid)}>
+                                    Usuń z ulubionych
+                                  </Button>
+                                </li>
+                              </div>
 
-                                              <ul >
-                                                <div className="Comp-list">
+                            </ul>
+                          </div>
 
-                                                  <li> {this.props.products.data.productsByUid[uid].productName + '  '}
+                          : null
+                        }
+                      </div>
 
-                                                    <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/comp1.png'}/>
-                                                    <Button bsStyle="info" onClick={() => this.props.removeFromFavorites(uid)}>
-                                                      Usuń z ulubionych
-                                                    </Button>
-                                                  </li>
-                                                </div>
-
-                                              </ul>
-                                            </div>
-
-                                    : null
-                                }
-                            </div>
-
-                    ))
+                    })
                 }
             </div>
         )
