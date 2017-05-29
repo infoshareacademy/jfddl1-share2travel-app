@@ -4,8 +4,7 @@ import Popap2 from './Popap2'
 import PPopap2 from './PPopap2'
 
 // import { Link } from 'react-router-dom'
-// importa Ba from './Ba';
-import {Image, Button, Glyphicon, Navbar} from 'react-bootstrap'
+import {Image, Button} from 'react-bootstrap'
 
 
 
@@ -96,18 +95,18 @@ const BurgerMenuWrapper = (props) => (
 
 
       <ul>
-        <Button id="b1" href="#" bsStyle="primary" bsSize="xsmall">Facbook</Button>
-      <Button id="b2" href="#" bsStyle="primary" bsSize="xsmall">Google</Button>
-        <Button id="b3" href="#" bsStyle="primary" bsSize="xsmall">Twiter</Button>
+        <Button id="b1" href="https://www.facebook.com/" bsStyle="primary" bsSize="xsmall">Facbook</Button>
+      <Button id="b2" href="https://www.gmail.com/" bsStyle="primary" bsSize="xsmall">Google</Button>
+        <Button id="b3" href="https://www.twitter.com/" bsStyle="primary" bsSize="xsmall">Twiter</Button>
 
       </ul>
       <li style={divStyle}>Lublin, Poland</li>
 
 
-        <Navbar.Text className={styles.userMenu}>
-          <Navbar.Link href="#"><Glyphicon glyph="home"/></Navbar.Link>
-          <Navbar.Link href="#"><Glyphicon glyph="log-out"/></Navbar.Link>
-        </Navbar.Text>
+        {/*<Navbar.Text className={styles.userMenu}>*/}
+          {/*<Navbar.Link href="#"><Glyphicon glyph="home"/></Navbar.Link>*/}
+          {/*<Navbar.Link href="#"><Glyphicon glyph="log-out"/></Navbar.Link>*/}
+        {/*</Navbar.Text>*/}
 
 
       {/*<button class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</button>*/}
@@ -132,7 +131,6 @@ const BurgerMenuWrapper = (props) => (
         {/*</li>*/}
 
       {/*</div>*/}
-
 
     </BurgerMenu>
     <div id="page-wrap">

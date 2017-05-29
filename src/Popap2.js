@@ -35,11 +35,7 @@ class Popap2 extends React.Component {
             <Modal.Title >Edytuj zdjęcie profilowe</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {/*<h4>Instrukcja korzystania z aplikacji</h4>*/}
-            {/*<p>Aplikcja ToBuy pomoże w łatwy i przystępny sposób porównć ceny i produkty.</p>*/}
 
-            {/*<h4>Powodzenia użytkowniku !</h4>*/}
-            {/*<p>Pamiętaj zawsze możesz tu wrócić !</p>*/}
 
             <ButtonToolbar>
             <Button bsStyle="primary">Edytuj zdjęcie</Button>
