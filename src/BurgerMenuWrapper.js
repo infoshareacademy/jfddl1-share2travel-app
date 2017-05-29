@@ -2,7 +2,7 @@ import React from 'react'
 import { push as BurgerMenu } from 'react-burger-menu'
 // import { Link } from 'react-router-dom'
 // importa Ba from './Ba';
-import {Image, Button, Label, Glyphicon, Navbar} from 'react-bootstrap'
+import {Image, Button, Label, Glyphicon, Navbar, Fade, Well, ButtonToolbar} from 'react-bootstrap'
 
 
 const styles = {
@@ -58,30 +58,44 @@ const BurgerMenuWrapper = (props) => (
     >
       <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/profile.png'}/>
 
-      <div>
-        <Label bsStyle="default">Edytuj Zdjęcie</Label>&nbsp;
-        <Label bsStyle="primary">Edytuj profil</Label>&nbsp;
-      </div>
 
-      <div>
-        <Label bsStyle="default">Zaloguj się</Label>&nbsp;
-        <Label bsStyle="primary">Wyloguj się</Label>&nbsp;
-      </div>
+      <ButtonToolbar>
+        <Button bsStyle="primary">Edytuj zdjęcie</Button>
+      </ButtonToolbar>
+
+
+
+
+      {/*<ButtonToolbar>*/}
+        {/*<Button>Edytuj profil</Button>*/}
+      {/*</ButtonToolbar>*/}
+
+      {/*<div>*/}
+        {/*<Label bsStyle="default">Edytuj Zdjęcie</Label>&nbsp;*/}
+        {/*<Label bsStyle="primary">Edytuj profil</Label>&nbsp;*/}
+      {/*</div>*/}
+
+      {/*<div>*/}
+        {/*<Label bsStyle="default">Zaloguj się</Label>&nbsp;*/}
+        {/*<Label bsStyle="primary">Wyloguj się</Label>&nbsp;*/}
+      {/*</div>*/}
 
 
 
 
       <br/>
-      <p style={divStyle}>Karolina Karolina</p>
+      <li style={divStyle}>Karolina Karolina</li>
 
-      <p style={divStyle}>gmail@gmail.com</p>
+      <li style={divStyle}>gmail@gmail.com</li>
+
+
       <ul>
         <Button id="b1" href="#" bsStyle="primary" bsSize="xsmall">Facbook</Button>
       <Button id="b2" href="#" bsStyle="primary" bsSize="xsmall">Google</Button>
         <Button id="b3 "href="#" bsStyle="primary" bsSize="xsmall">Twiter</Button>
 
       </ul>
-      <p style={divStyle}>Lublin, Poland</p>
+      <li style={divStyle}>Lublin, Poland</li>
 
 
         <Navbar.Text className={styles.userMenu}>
@@ -90,7 +104,19 @@ const BurgerMenuWrapper = (props) => (
         </Navbar.Text>
 
 
+      {/*<button class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</button>*/}
 
+        {/*<Button onClick={()=> this.setState({ open: !this.state.open })}>*/}
+          {/*click*/}
+        {/*</Button>*/}
+        {/*<Fade in={this.state.open}>*/}
+          {/*<div>*/}
+            {/*<Well>*/}
+              {/*Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.*/}
+              {/*Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.*/}
+            {/*</Well>*/}
+          {/*</div>*/}
+        {/*</Fade>*/}
 
 
     </BurgerMenu>
