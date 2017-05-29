@@ -11,8 +11,6 @@ const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(locatio
 import {fetchProducts} from './state/products'
 import * as firebase from 'firebase';
 
-// Initialize Firebase
-
 
 export default connect(
   state => ({
@@ -26,13 +24,23 @@ export default connect(
   })
 )(
   class Comp extends React.Component {
+
+    state = {
+      x: '0'
+    }
+
     componentWillMount() {
       this.props.fetchProducts()
+      firebase.database().ref('/x/').on('value', (snapshot) => {
+        console.log('snapshot', snapshot.val());
+        this.setState({
+          x: snapshot.val()
+        });
+      });
     }
 
     constructor(props) {
       super(props);
-      console.log('firebase', firebase);
       this.state = {
         searchPhrase: '',
         products: null,
@@ -54,16 +62,15 @@ export default connect(
       const productUid = this.props.match.params.productId;
       const products = this.state.products;
 
+
       const product = products !== null ?
         products.find(
           product => product.uid === productUid
         ) : null;
 
-      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return e.price}) : null;
-
-      // const storageRef = firebase.storage().ref('x');
-
+      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseInt(e.price,10)}) : null;
       return product === null ? <p>Ładowanie produktu</p> : (
+
         <div>
           <Panel className='Comp-center Comp-panel' bsStyle="primary" header={product.productName}>
           </Panel>
@@ -82,9 +89,8 @@ export default connect(
                 Kategoria: {product.department}<br/>
                 Materiał: {product.productMaterial}<br/>
                 Kolor: {product.color}<br/>
-                {/*ID: {storageRef}*/}
-                {/*{product.id}*/}
-
+                ID: {product.id}<br/>
+                {similarProductsPrices.reduce(function (a, b) {return a + b;}, 0)}
 
               </p>
               <div className="fb-share-button" data-href="{face}" data-layout="button" data-size="large"
@@ -141,21 +147,13 @@ export default connect(
               </ButtonToolbar>
             </Col>
           </Row>
-
           <Row>
             <Col className='Comp-wykresik' lg={6}>
               <Chart
                 series={[{
-                  data: [0, 0, 0, 0, 0, 0, 0]
-
-                  //   .map(item => parseFloat(product.price)).map((item, index, array) => {
-                  //   if (index === 0) {
-                  //     return item
-                  //   }
-                  //   return item + Math.round(Math.random() * 10) - 5
-                  // }).reverse()
-
-                }]}/>
+                  data: this.state.x
+                }]}
+              />
             </Col>
           </Row>
         </div>
