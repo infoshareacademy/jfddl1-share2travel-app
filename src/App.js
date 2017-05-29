@@ -21,7 +21,7 @@ import TopNavigation from './TopNavigation'
 const links = [
   { path: '/', label: 'Home' },
   { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/FavoriteProducts', label: 'FavoriteProducts' },
+  { path: '/FavoriteProducts', label: 'Ulubione' },
 ]
 var isLogged = true;
 

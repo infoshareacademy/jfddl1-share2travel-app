@@ -1,5 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import Toggle from 'react-toggle'
 
 import {add, remove} from './state/favoriteProducts'
 import {Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
@@ -101,6 +102,28 @@ export default connect(
 
                   Usuń z ulubionych
                 </button>
+                <div>
+                    <label>
+
+
+
+                            {
+                              favIds.includes(product.uid) ?
+                                <Toggle
+                                  checked={true}
+                                  aria-label='Usuń z ulubionych'
+                                  onChange={() => removeFromFavorites(product.uid)}/> :
+                                <Toggle
+                                  checked={false}
+                                  aria-label='Dodaj do ulubionych'
+                                  onChange={() => addToFavorites(product.uid)}/>
+                            }
+
+                         <br/>
+                        <p>Dodaj do ulubionych</p>
+
+                    </label>
+                </div>
 
               </div>
             </Col>
