@@ -131,8 +131,8 @@ export default connect(
               <ButtonToolbar>
 
                 {similarProductsPrices.map(price => (
-                  <Button className="Comp-button" bsStyle="info">
-                    <img className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
+                  <Button  key={products.uid} className="Comp-button" bsStyle="info">
+                    <img key={products.uid} className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
                     <span className="Comp-price">
                     {parseInt(price, 10) + ' zł'}
                     </span>
