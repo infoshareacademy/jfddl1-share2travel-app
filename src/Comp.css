@@ -54,7 +54,7 @@
     font-size: 1.5rem;
 }
 Comp-FP-div{
-
+flex-wrap:wrap;
 }
 .react-toggle {
     touch-action: pan-x;

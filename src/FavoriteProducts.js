@@ -2,8 +2,15 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { remove } from './state/favoriteProducts'
 import { fetchProducts } from './state/products'
-import './Comp.css'
+import {Image} from 'react-bootstrap'
 
+import './Comp.css'
+const divStyle = {
+  width:'25%',
+  height:'auto',
+  margin:'auto',
+  color:'black'
+};
 export default connect(
     state => ({
         products: state.products,
@@ -27,13 +34,17 @@ export default connect(
                     .map(uid => (
 
 
-                            <p key={uid}>
+                            <div key={uid}>
 
                                 {this.props.products.data !== null ?
                                             <div className="Comp-FP-div">
+
                                               <ul >
                                                 <div className="Comp-list">
+
                                                   <li> {this.props.products.data.productsByUid[uid].productName + '  '}
+
+                                                    <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/comp.png'}/>
                                                     <button onClick={() => this.props.removeFromFavorites(uid)}>
                                                       Usuń
                                                     </button>
@@ -45,7 +56,7 @@ export default connect(
 
                                     : null
                                 }
-                            </p>
+                            </div>
 
                     ))
                 }
