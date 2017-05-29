@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { remove } from './state/favoriteProducts'
 import { fetchProducts } from './state/products'
+import './Comp.css'
 
 export default connect(
     state => ({
@@ -28,15 +29,20 @@ export default connect(
 
                             <p key={uid}>
 
-                                {this.props.products.data !== null ? 
-                                            <span> <ul class="Comp-list">
-                                               <li> {this.props.products.data.productsByUid[uid].productName + '  '}
-                                                   <button onClick={() => this.props.removeFromFavorites(uid)}>
-                                                    Usuń
-                                                   </button>
-                                               </li>
-                                            </ul>
-                                            </span>
+                                {this.props.products.data !== null ?
+                                            <div className="Comp-FP-div">
+                                              <ul >
+                                                <div className="Comp-list">
+                                                  <li> {this.props.products.data.productsByUid[uid].productName + '  '}
+                                                    <button onClick={() => this.props.removeFromFavorites(uid)}>
+                                                      Usuń
+                                                    </button>
+                                                  </li>
+                                                </div>
+
+                                              </ul>
+                                            </div>
+
                                     : null
                                 }
                             </p>

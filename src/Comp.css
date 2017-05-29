@@ -49,10 +49,12 @@
     text-align: center;
 }
 
-ul li{
+.Comp-list{
     text-align: left;
-    margin-right: auto;
-    margin-left:auto;
+    font-size: 1.5rem;
+}
+Comp-FP-div{
+
 }
 .react-toggle {
     touch-action: pan-x;
