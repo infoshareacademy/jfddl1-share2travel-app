@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { remove } from './state/favoriteProducts'
 import { fetchProducts } from './state/products'
-import {Image} from 'react-bootstrap'
+import {Image, Button} from 'react-bootstrap'
 
 import './Comp.css'
 const divStyle = {
@@ -27,14 +27,14 @@ export default connect(
     render() {
 
         return (
-            <div>
+            <div >
                 <h1>Ulubione</h1>
                 {this.props
                     .favIds
                     .map(uid => (
 
 
-                            <div key={uid}>
+                            <div key={uid} className="Comp-div-FavoriteProducts">
 
                                 {this.props.products.data !== null ?
                                             <div className="Comp-FP-div">
@@ -44,10 +44,10 @@ export default connect(
 
                                                   <li> {this.props.products.data.productsByUid[uid].productName + '  '}
 
-                                                    <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/comp.png'}/>
-                                                    <button onClick={() => this.props.removeFromFavorites(uid)}>
-                                                      Usuń
-                                                    </button>
+                                                    <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/comp1.png'}/>
+                                                    <Button bsStyle="info" onClick={() => this.props.removeFromFavorites(uid)}>
+                                                      Usuń z ulubionych
+                                                    </Button>
                                                   </li>
                                                 </div>
 

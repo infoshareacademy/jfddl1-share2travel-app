@@ -92,16 +92,16 @@ export default connect(
                                                  href={face}>Udostępnij</a>
                 <br/>
                 <br/>
-                <button onClick={() => addToFavorites(product.uid)}
-                        disabled={favIds.includes(product.uid)}>
-                  Dodaj do ulubionych
-                </button>
-                <button
-                  onClick={() => removeFromFavorites(product.uid)}
-                  disabled={!favIds.includes(product.uid)}>
+                {/*<button onClick={() => addToFavorites(product.uid)}*/}
+                        {/*disabled={favIds.includes(product.uid)}>*/}
+                  {/*Dodaj do ulubionych*/}
+                {/*</button>*/}
+                {/*<button*/}
+                  {/*onClick={() => removeFromFavorites(product.uid)}*/}
+                  {/*disabled={!favIds.includes(product.uid)}>*/}
 
-                  Usuń z ulubionych
-                </button>
+                  {/*Usuń z ulubionych*/}
+                {/*</button>*/}
                 <div>
                     <label>
 

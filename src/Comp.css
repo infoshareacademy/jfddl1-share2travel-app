@@ -50,11 +50,26 @@
 }
 
 .Comp-list{
-    text-align: left;
+
+    color:#000;
+    font-weight: 800;
     font-size: 1.5rem;
+    background-color: #9abbd8;
+    opacity: 0.7;
+    list-style-type: none;
+    padding: 3%;
+    text-align: center;
+
 }
 Comp-FP-div{
 flex-wrap:wrap;
+}
+.Comp-div-FavoriteProducts{
+    text-align: center;
+}
+.Comp-butt{
+    font-weight:400;
+
 }
 .react-toggle {
     touch-action: pan-x;
