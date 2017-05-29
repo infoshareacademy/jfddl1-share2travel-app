@@ -8,6 +8,10 @@ import './Comp.css'
 
 const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href);
 import {fetchProducts} from './state/products'
+import * as firebase from 'firebase';
+
+// Initialize Firebase
+
 
 export default connect(
   state => ({
@@ -27,9 +31,11 @@ export default connect(
 
     constructor(props) {
       super(props);
+      console.log('firebase', firebase);
       this.state = {
         searchPhrase: '',
-        products: null
+        products: null,
+
       };
       fetch(
         process.env.PUBLIC_URL + '/data/products.json'
@@ -54,6 +60,8 @@ export default connect(
 
       const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return e.price}) : null;
 
+      // const storageRef = firebase.storage().ref('x');
+
       return product === null ? <p>Ładowanie produktu</p> : (
         <div>
           <Panel className='Comp-center Comp-panel' bsStyle="primary" header={product.productName}>
@@ -73,7 +81,8 @@ export default connect(
                 Kategoria: {product.department}<br/>
                 Materiał: {product.productMaterial}<br/>
                 Kolor: {product.color}<br/>
-                ID: {product.id}
+                {/*ID: {storageRef}*/}
+                {/*{product.id}*/}
 
 
               </p>
