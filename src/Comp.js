@@ -53,7 +53,7 @@ export default connect(
         response => response.json()
       ).then(
         data => this.setState({
-          products: data.products
+          products: data.allProducts
         })
       )
     }
