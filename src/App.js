@@ -18,6 +18,8 @@ import FavoriteProducts from './FavoriteProducts'
 // import './App.css';
 import Comp from './Comp'
 import Popup from './Popup'
+
+
 // import PPopup from ',/PPopup'
 import Login from './Login'
 
@@ -69,6 +71,7 @@ const App = (props) => (
             <Route path="/Comp" component={Comp}/>
             <Route path="/products/:productId" component={Comp}/>
             <Route path="/start" component={Popup}/>
+
             <Route path="/FavoriteProducts" component={FavoriteProducts}/>
           </Col>
         </Row>

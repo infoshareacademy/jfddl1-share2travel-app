@@ -1,8 +1,12 @@
 import React from 'react'
 import { push as BurgerMenu } from 'react-burger-menu'
+import Popap2 from './Popap2'
+import PPopap2 from './PPopap2'
+
 // import { Link } from 'react-router-dom'
 // importa Ba from './Ba';
-import {Image, Button, Label, Glyphicon, Navbar, Fade, Well, ButtonToolbar} from 'react-bootstrap'
+import {Image, Button, Glyphicon, Navbar} from 'react-bootstrap'
+
 
 
 const styles = {
@@ -58,10 +62,12 @@ const BurgerMenuWrapper = (props) => (
     >
       <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/profile.png'}/>
 
+     <PPopap2/>
+      <Popap2/>
 
-      <ButtonToolbar>
-        <Button bsStyle="primary">Edytuj zdjęcie</Button>
-      </ButtonToolbar>
+      {/*<ButtonToolbar>*/}
+        {/*<Button id="b3" bsStyle="primary">Edytuj zdjęcie</Button>*/}
+      {/*</ButtonToolbar>*/}
 
 
 
@@ -86,13 +92,13 @@ const BurgerMenuWrapper = (props) => (
       <br/>
       <li style={divStyle}>Karolina Karolina</li>
 
-      <li style={divStyle}>gmail@gmail.com</li>
+      {/*<li style={divStyle}>gmail@gmail.com</li>*/}
 
 
       <ul>
         <Button id="b1" href="#" bsStyle="primary" bsSize="xsmall">Facbook</Button>
       <Button id="b2" href="#" bsStyle="primary" bsSize="xsmall">Google</Button>
-        <Button id="b3 "href="#" bsStyle="primary" bsSize="xsmall">Twiter</Button>
+        <Button id="b3" href="#" bsStyle="primary" bsSize="xsmall">Twiter</Button>
 
       </ul>
       <li style={divStyle}>Lublin, Poland</li>
@@ -117,6 +123,15 @@ const BurgerMenuWrapper = (props) => (
             {/*</Well>*/}
           {/*</div>*/}
         {/*</Fade>*/}
+      {/*<div>*/}
+
+
+        {/*<li class="m-top-xs">*/}
+          {/*<i class="fa fa-external-link user-profile-icon"></i>*/}
+          {/*<a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>*/}
+        {/*</li>*/}
+
+      {/*</div>*/}
 
 
     </BurgerMenu>
