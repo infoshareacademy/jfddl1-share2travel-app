@@ -30,8 +30,9 @@ export default connect(
     }
 
     componentWillMount() {
-      this.props.fetchProducts()
-      firebase.database().ref('/x/').on('value', (snapshot) => {
+      this.props.fetchProducts();
+      console.log('productId', this.props.match.params.productId);
+      firebase.database().ref('/productsByUid/').child(this.props.match.params.productId).child('/pricesArray/').on('value', (snapshot) => {
         console.log('snapshot', snapshot.val());
         this.setState({
           x: snapshot.val()
