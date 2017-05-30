@@ -6,6 +6,7 @@
     "admin-lte": "^2.3.11",
     "bootstrap": "^3.3.7",
     "chart.js": "^1.1.1",
+    "firebase": "^4.0.0",
     "react": "^15.5.4",
     "react-addons-css-transition-group": "^15.5.2",
     "react-addons-transition-group": "^15.5.2",

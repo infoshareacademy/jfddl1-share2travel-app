@@ -3,6 +3,7 @@ import { push as BurgerMenu } from 'react-burger-menu'
 import Popap2 from './Popap2'
 import PPopap2 from './PPopap2'
 
+// import * as firebase from 'firebase'
 // import { Link } from 'react-router-dom'
 import {Image, Button} from 'react-bootstrap'
 
