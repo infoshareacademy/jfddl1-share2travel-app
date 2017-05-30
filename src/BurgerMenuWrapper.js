@@ -65,34 +65,9 @@ const BurgerMenuWrapper = (props) => (
      <PPopap2/>
       <Popap2/>
 
-      {/*<ButtonToolbar>*/}
-        {/*<Button id="b3" bsStyle="primary">Edytuj zdjęcie</Button>*/}
-      {/*</ButtonToolbar>*/}
-
-
-
-
-      {/*<ButtonToolbar>*/}
-        {/*<Button>Edytuj profil</Button>*/}
-      {/*</ButtonToolbar>*/}
-
-      {/*<div>*/}
-        {/*<Label bsStyle="default">Edytuj Zdjęcie</Label>&nbsp;*/}
-        {/*<Label bsStyle="primary">Edytuj profil</Label>&nbsp;*/}
-      {/*</div>*/}
-
-      {/*<div>*/}
-        {/*<Label bsStyle="default">Zaloguj się</Label>&nbsp;*/}
-        {/*<Label bsStyle="primary">Wyloguj się</Label>&nbsp;*/}
-      {/*</div>*/}
-
-
-
 
       <br/>
       <li style={divStyle}>Karolina Karolina</li>
-
-      {/*<li style={divStyle}>gmail@gmail.com</li>*/}
 
 
       <ul>
@@ -104,34 +79,6 @@ const BurgerMenuWrapper = (props) => (
       <li style={divStyle}>Lublin, Poland</li>
 
 
-        {/*<Navbar.Text className={styles.userMenu}>*/}
-          {/*<Navbar.Link href="#"><Glyphicon glyph="home"/></Navbar.Link>*/}
-          {/*<Navbar.Link href="#"><Glyphicon glyph="log-out"/></Navbar.Link>*/}
-        {/*</Navbar.Text>*/}
-
-
-      {/*<button class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</button>*/}
-
-        {/*<Button onClick={()=> this.setState({ open: !this.state.open })}>*/}
-          {/*click*/}
-        {/*</Button>*/}
-        {/*<Fade in={this.state.open}>*/}
-          {/*<div>*/}
-            {/*<Well>*/}
-              {/*Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.*/}
-              {/*Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.*/}
-            {/*</Well>*/}
-          {/*</div>*/}
-        {/*</Fade>*/}
-      {/*<div>*/}
-
-
-        {/*<li class="m-top-xs">*/}
-          {/*<i class="fa fa-external-link user-profile-icon"></i>*/}
-          {/*<a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>*/}
-        {/*</li>*/}
-
-      {/*</div>*/}
 
     </BurgerMenu>
     <div id="page-wrap">

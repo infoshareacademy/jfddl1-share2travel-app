@@ -64,8 +64,26 @@ class Popap2 extends React.Component {
       }, function () {
         // Upload completed successfully, now we can get the download URL
         var downloadURL = uploadTask.snapshot.downloadURL;
+
+        var user = firebase.auth().currentUser;
+
+        // user.updateProfile({
+        //   displayName: "Jane Q. User",
+        //   photoURL: "#"
+        // }).then(function() {
+        //   // Update successful.
+        // }, function(error) {
+        //   // An error happened.
+        // });
+
       });
   }
+
+
+
+
+
+
   close = () => this.setState({showModal: false})
 
   open = () => this.setState({showModal: true})
