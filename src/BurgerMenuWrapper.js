@@ -64,34 +64,10 @@ const BurgerMenuWrapper = (props) => (
      <PPopap2/>
       <Popap2/>
 
-      {/*<ButtonToolbar>*/}
-        {/*<Button id="b3" bsStyle="primary">Edytuj zdjęcie</Button>*/}
-      {/*</ButtonToolbar>*/}
-
-
-
-
-      {/*<ButtonToolbar>*/}
-        {/*<Button>Edytuj profil</Button>*/}
-      {/*</ButtonToolbar>*/}
-
-      {/*<div>*/}
-        {/*<Label bsStyle="default">Edytuj Zdjęcie</Label>&nbsp;*/}
-        {/*<Label bsStyle="primary">Edytuj profil</Label>&nbsp;*/}
-      {/*</div>*/}
-
-      {/*<div>*/}
-        {/*<Label bsStyle="default">Zaloguj się</Label>&nbsp;*/}
-        {/*<Label bsStyle="primary">Wyloguj się</Label>&nbsp;*/}
-      {/*</div>*/}
-
-
-
 
       <br/>
       <li style={divStyle}>Karolina Karolina</li>
 
-      {/*<li style={divStyle}>gmail@gmail.com</li>*/}
 
 
       <ul>
