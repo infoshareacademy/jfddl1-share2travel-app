@@ -12,17 +12,6 @@ import App from './App';
 import './index.css';
 import * as firebase from 'firebase';
 
-var config = {
-  apiKey: "AIzaSyDongyiSAH3zVZeaXMp_P552qVZdMEUbEM",
-  authDomain: "fireproject-8af7a.firebaseapp.com",
-  databaseURL: "https://fireproject-8af7a.firebaseio.com",
-  projectId: "fireproject-8af7a",
-  storageBucket: "fireproject-8af7a.appspot.com",
-  messagingSenderId: "30864284486"
-};
-firebase.initializeApp(config);
-
-import * as firebase from 'firebase';
 
 // Initialize Firebase
 var config = {
