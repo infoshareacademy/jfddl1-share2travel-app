@@ -2,84 +2,115 @@
 import React from 'react';
 import Karola from'./Karola';
 import FavoriteProducts from './FavoriteProducts'
-
-// import Product from './Product'
-// import {
-//     BrowserRouter as Router,
-//     Route
-// } from 'react-router-dom'
-// import SmartCounter from './SmartCounter'
-
-// import Popup from './Popup';
-// import Navbar from './Navbar';
-// import Logo from './Logo'
-
-
-// import './App.css';
 import Comp from './Comp'
 import Popup from './Popup'
-
-
-// import PPopup from ',/PPopup'
 import Login from './Login'
-
+import * as firebase from 'firebase';
 
 import {
   BrowserRouter as Router,
-  Route
-} from 'react-router-dom'
+  Route} from 'react-router-dom'
 import {
   Grid,
   Col,
   Row,
 } from 'react-bootstrap'
 import { connect } from 'react-redux'
-
-// import Home from './Home'
-
-
 import BurgerMenuWrapper from './BurgerMenuWrapper'
 import TopNavigation from './TopNavigation'
+// import './store'
 
 const links = [
   { path: '/', label: 'Home' },
-  // { path: '/about', label: 'About' },
   { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/FavoriteProducts', label: 'FavoriteProducts' },
+  { path: '/FavoriteProducts', label: 'Ulubione' },
 ]
 
-const App = (props) => (
-  <Router>
-    <BurgerMenuWrapper
-      isOpen={props.sidebarOpen}
-      toggleSidebar={props.toggleSidebar}
-      onStateChange={(state) => props.toggleSidebar(state.isOpen)}
-      links={links}
-    >
+var isLogged = false;
 
-        <TopNavigation
-          links={links}
-          toggleSidebar={props.toggleSidebar}
-        />
-      <Grid>
+class App extends React.Component{
 
-        <Row>
-          <Col md={12}>
-            <Route exact path="/"  component={Login} />
-            <Route path="/Karola" component={Karola}/>
-            {/*<Route path="/about" component={About}/>*/}
-            <Route path="/Comp" component={Comp}/>
-            <Route path="/products/:productId" component={Comp}/>
-            <Route path="/start" component={Popup}/>
+  constructor(){
+    super();
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        console.log('USER IS LOGGED IN!');
+        isLogged = true;
+      } else {
+        console.log('USER IS NOT LOGGED IN!');
+        isLogged = false;
+      }
+      this.forceUpdate();
+    });
+  }
 
-            <Route path="/FavoriteProducts" component={FavoriteProducts}/>
-          </Col>
-        </Row>
-      </Grid>
-    </BurgerMenuWrapper>
-  </Router>
-)
 
+  // constructor(){
+  //   super():
+  //   firebase.auth().signOut().then(function() {
+  //     // Sign-out successful.
+  //   }).catch(function(error) {
+  //     // An error happened.
+  //   });
+  // }
+
+  render() {
+    return (
+      <Router>
+
+        {function(){
+
+          if(isLogged){
+            return(
+              <div>
+                <BurgerMenuWrapper
+                  isOpen={this.props.sidebarOpen}
+                  toggleSidebar={this.props.toggleSidebar}
+                  onStateChange={(state) => this.props.toggleSidebar(state.isOpen)}
+                  links={links}
+                >
+                  <TopNavigation
+                    links={links}
+                    toggleSidebar={this.props.toggleSidebar}
+                  />
+                  <Grid>
+                    <Row>
+                      <Col md={12}>
+                        <Route exact path="/"  component={Popup} />
+                        <Route path="/Karola" component={Karola}/>
+                        <Route path="/Comp" component={Comp}/>
+                        <Route path="/products/:productId" component={Comp}/>
+                        <Route path="/start" component={Popup}/>
+                        <Route path="/FavoriteProducts" component={FavoriteProducts}/>
+
+                      </Col>
+                    </Row>
+                  </Grid>
+                </BurgerMenuWrapper>
+              </div>
+            )}
+
+          else{
+            return(
+              <div>
+                <Grid>
+                  <Row>
+                    <Col md={12}>
+                      <Route exact path="/"  component={Login} />
+                    </Col>
+                  </Row>
+                </Grid>
+              </div>
+
+            )
+          }
+
+        }.call(this)}
+
+      </Router>
+    )
+  }
+}
 const mapStateToProps = state => ({
   sidebarOpen: state.sidebar.sidebarOpen
 })

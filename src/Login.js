@@ -7,6 +7,7 @@ import {Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock
 import PPopup from "./PPopup";
 import {Link} from 'react-router-dom'
 import * as firebase from 'firebase';
+import './App';
 function FieldGroup({ id, label, help, ...props }) {
   return (
     <FormGroup controlId={id}>
