@@ -4,7 +4,7 @@ import Popap2 from './Popap2'
 import PPopap2 from './PPopap2'
 
 // import { Link } from 'react-router-dom'
-import {Image, Button} from 'react-bootstrap'
+import {Image, Button, Navbar, Glyphicon} from 'react-bootstrap'
 
 
 
@@ -103,10 +103,10 @@ const BurgerMenuWrapper = (props) => (
       <li style={divStyle}>Lublin, Poland</li>
 
 
-        {/*<Navbar.Text className={styles.userMenu}>*/}
+        <Navbar.Text className={styles.userMenu}>
           {/*<Navbar.Link href="#"><Glyphicon glyph="home"/></Navbar.Link>*/}
-          {/*<Navbar.Link href="#"><Glyphicon glyph="log-out"/></Navbar.Link>*/}
-        {/*</Navbar.Text>*/}
+          <Navbar.Link href="./Login.js"><Glyphicon glyph="log-out"/></Navbar.Link>
+        </Navbar.Text>
 
 
       {/*<button class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</button>*/}
