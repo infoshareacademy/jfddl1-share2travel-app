@@ -1,12 +1,29 @@
 import React from 'react';
 import ReactHighcharts from 'react-highcharts';
 
+const weekday = new Array(7);
+const w = new Date();
+weekday[-6] = "Monday";
+weekday[-5] = "Tuesday";
+weekday[-4] = "Wednesday";
+weekday[-3] = "Thursday";
+weekday[-2] = "Friday";
+weekday[-1] = "Saturday";
+weekday[0] =  "Sunday";
+weekday[1] = "Monday";
+weekday[2] = "Tuesday";
+weekday[3] = "Wednesday";
+weekday[4] = "Thursday";
+weekday[5] = "Friday";
+weekday[6] = "Saturday";
+const currentDay = weekday[w.getDay()];
+
 const config = {
   title: {
     text: 'Historia cen'
   },
   xAxis: {
-    categories: ['Pon','Wt','Śr','Czw','Pt','Sob','Ndz']
+    categories: [weekday[w.getDay()-6],weekday[w.getDay()-5],weekday[w.getDay()-4],weekday[w.getDay()-3],weekday[w.getDay()-2],weekday[w.getDay()-1],currentDay]
   },
   yAxis: {
     title: {
