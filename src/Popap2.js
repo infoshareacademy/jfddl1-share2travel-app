@@ -4,11 +4,12 @@ import {
   Modal,
   Button,
   ButtonToolbar,
-  Glyphicon
+  // LoadingButton
 } from 'react-bootstrap'
 import * as firebase from 'firebase'
-//import Download from "./Download";
+// import Load from './Load';
 import FileInput from 'react-file-input'
+
 
 
 class Popap2 extends React.Component {
@@ -68,7 +69,7 @@ class Popap2 extends React.Component {
         var user = firebase.auth().currentUser;
 
         // user.updateProfile({
-        //   displayName: "Jane Q. User",
+        //   displayName: "User",
         //   photoURL: "#"
         // }).then(function() {
         //   // Update successful.
@@ -119,8 +120,16 @@ class Popap2 extends React.Component {
                            onChange={this.handleFileChange}/>
               </Button>
 
+              <Button bsStyle="primary">Default button
+                {/*<Input type='file' label='Upload' accept='.png.gif'*/}
 
-              <Button><Glyphicon glyph="star"/> START</Button>
+                       {/*ref={ function(ref) { this.fileUpload = ref }.bind(this)}*/}
+                {/*/>*/}
+              </Button>
+
+            {/*/!*<LoadingButton/>*!/     load*/}
+
+              {/*<Button><Glyphicon glyph="star"/> START</Button>*/}
             </ButtonToolbar>
 
           </Modal.Body>

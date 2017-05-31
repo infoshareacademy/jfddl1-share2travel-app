@@ -70,6 +70,7 @@ const BurgerMenuWrapper = (props) => (
       <li style={divStyle}>Karolina Karolina</li>
 
 
+
       <ul>
         <Button id="b1" href="https://www.facebook.com/" bsStyle="primary" bsSize="xsmall">Facbook</Button>
       <Button id="b2" href="https://www.gmail.com/" bsStyle="primary" bsSize="xsmall">Google</Button>
