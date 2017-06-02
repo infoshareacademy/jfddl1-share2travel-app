@@ -118,12 +118,27 @@ class Popap2 extends React.Component {
 
               {/*<div className="well" style={wellStyles}>*/}
               <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="edit" />Pobierz zdjęcie Profilowe
+
+                {/*<label class="fileContainer">*/}
+                  {/*Click here to trigger the file uploader!*/}
+                  {/*<input type="file"/>*/}
+                {/*</label>*/}
+
+
+
+
                 <FileInput name="myImage"
                            accept=".png,.gif"
                            placeholder="My Image"
                            className="inputClass"
-                           onChange={this.handleFileChange}/></Button>
+                           onChange={this.handleFileChange}/>
+              </Button>
               <Button className="well2" bsSize="large" block><Glyphicon glyph="share" />Załaduj zdjęcie Profilowe</Button>
+
+              {/*<label class="fileContainer">*/}
+                {/*Click here to trigger the file uploader!*/}
+                {/*<input type="file"/>*/}
+              {/*</label>*/}
               {/*</div>*/}
 
               {/*<Button className="b1" bsStyle="primary">Edytuj zdjęcie*/}
