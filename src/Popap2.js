@@ -4,10 +4,11 @@ import {
   Modal,
   Button,
   ButtonToolbar,
-  // LoadingButton
+  Glyphicon
+
 } from 'react-bootstrap'
 import * as firebase from 'firebase'
-// import Load from './Load';
+
 import FileInput from 'react-file-input'
 
 
@@ -68,17 +69,18 @@ class Popap2 extends React.Component {
 
         var user = firebase.auth().currentUser;
 
-        // user.updateProfile({
-        //   displayName: "User",
-        //   photoURL: "#"
-        // }).then(function() {
-        //   // Update successful.
-        // }, function(error) {
-        //   // An error happened.
-        // });
+        user.updateProfile({
+          photoURL: downloadURL
+        }).then(function() {
+          console.log('USER UPDATED', firebase.auth().currentUser);
+        }, function(error) {
+          console.log('USER ERROR PHOTO NOT UPDATE');
+          // An error happened.
+        });
 
       });
   }
+
 
 
 
@@ -98,7 +100,7 @@ class Popap2 extends React.Component {
           bsStyle="info"
           bsSize="medium"
           onClick={this.open}
-        >
+        ><Glyphicon glyph="user" />
           Zmień zdjęcie profilowe
         </Button>
 
@@ -110,24 +112,15 @@ class Popap2 extends React.Component {
 
 
             <ButtonToolbar>
-              <Button className="b1" bsStyle="primary">Edytuj zdjęcie
+
+              <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="user" />Pobierz zdjęcie Profilowe
                 <FileInput name="myImage"
                            accept=".png,.gif"
                            placeholder="My Image"
                            className="inputClass"
-                           onChange={this.handleFileChange}/>
-              </Button>
+                           onChange={this.handleFileChange}/></Button>
+              <Button className="well2" bsSize="large" block><Glyphicon glyph="star" />Załaduj zdjęcie Profilowe</Button>
 
-              <Button bsStyle="primary">Default button
-                {/*<Input type='file' label='Upload' accept='.png.gif'*/}
-
-                       {/*ref={ function(ref) { this.fileUpload = ref }.bind(this)}*/}
-                {/*/>*/}
-              </Button>
-
-            {/*/!*<LoadingButton/>*!/     load*/}
-
-              {/*<Button><Glyphicon glyph="star"/> START</Button>*/}
             </ButtonToolbar>
 
           </Modal.Body>
