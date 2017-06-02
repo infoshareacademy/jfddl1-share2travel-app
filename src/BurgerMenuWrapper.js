@@ -5,7 +5,7 @@ import PPopap2 from './PPopap2'
 
 // import * as firebase from 'firebase'
 // import { Link } from 'react-router-dom'
-import {Image, Button} from 'react-bootstrap'
+import {Image, Button,} from 'react-bootstrap'
 
 
 
@@ -67,17 +67,19 @@ const BurgerMenuWrapper = (props) => (
 
 
       <br/>
-      <li style={divStyle}>Karolina Karolina</li>
+      <li className="center" style={divStyle}>Karolina Karolina</li>
 
 
 
       <ul>
-        <Button id="b1" href="https://www.facebook.com/" bsStyle="primary" bsSize="xsmall">Facbook</Button>
+        <Button class="center" href="https://www.facebook.com/" bsStyle="primary" bsSize="xsmall">Facbook</Button>
       <Button id="b2" href="https://www.gmail.com/" bsStyle="primary" bsSize="xsmall">Google</Button>
         <Button id="b3" href="https://www.twitter.com/" bsStyle="primary" bsSize="xsmall">Twiter</Button>
 
       </ul>
       <li style={divStyle}>Lublin, Poland</li>
+
+
 
 
 
