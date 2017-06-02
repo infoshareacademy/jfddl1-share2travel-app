@@ -83,7 +83,6 @@ class Popap2 extends React.Component {
 
 
 
-
   close = () => this.setState({showModal: false})
 
   open = () => this.setState({showModal: true})
