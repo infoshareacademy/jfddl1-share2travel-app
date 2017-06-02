@@ -31,6 +31,14 @@ class Login extends React.Component {
         console.log('Zalogowano');
       }).catch((e => console.log(e.message)))
   }
+
+  signUpHandler = (e) => {
+    e.preventDefault();
+    firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+      .then(() => {
+        console.log('Zarejestrowano');
+      }).catch((e => console.log(e.message)))
+  }
   emailChangeHandler = (e) => {
     this.setState({
       email: e.target.value
@@ -59,26 +67,24 @@ class Login extends React.Component {
       eros eget ligula. Phasellus interdum mauris nec eros finibus consectetur id interdum massa.</p>,
     modal2: <div>
       <p>W celu założenia konta w aplikacji To Buy wypełnij poniższe pola.</p>
-      <form>
+      <form onSubmit={this.signUpHandler}>
         <FieldGroup
           id="formControlsText"
-          type="text"
-          placeholder="Wprowadź nazwę użytkownika"
-        />
-        <FieldGroup
-          id="formControlsPassword"
-          placeholder="Wprowadź hasło"
-          type="password"
-        />
-        <FieldGroup
-          id="formControlsPassword"
-          placeholder="Powtórz hasło"
-          type="password"
-        />
-        <FieldGroup
-          id="formControlsEmail"
+          className="login-username"
           type="email"
-          placeholder="Wprowadź adres e-mail"
+          placeholder="E-mail"
+          required
+          onChange={this.emailChangeHandler}
+          // value={this.state.email}
+        />
+        <FieldGroup
+          id="formControlsPassword"
+          className="login-password"
+          placeholder="Hasło"
+          type="password"
+          required
+          onChange={this.passwordChangeHandler}
+          // value={this.state.password}
         />
         <Button type="submit" className="center-block btn-submit">
           Wyślij <Glyphicon glyph="arrow-down"/>
