@@ -4,7 +4,7 @@ import Popap2 from './Popap2'
 import PPopap2 from './PPopap2'
 import * as firebase from 'firebase';
 
-import {Image, Button, Navbar, Glyphicon} from 'react-bootstrap'
+import {Image, Button, Navbar, Glyphicon, LinkContainer} from 'react-bootstrap'
 
 
 
@@ -92,7 +92,12 @@ class BurgerMenuWrapper extends React.Component {
 
           <Navbar.Text className={styles.userMenu}>
 
-            {/*<Navbar.Link href="/" onClick={this.logout}><Glyphicon glyph="log-out"/></Navbar.Link>*/}
+            <LinkContainer>
+
+              <Navbar.Link href="/" onClick={this.logout}><Glyphicon glyph="log-out"/></Navbar.Link>
+
+            </LinkContainer>
+
           </Navbar.Text>
 
 

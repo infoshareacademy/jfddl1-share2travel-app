@@ -113,13 +113,13 @@ class Popap2 extends React.Component {
 
             <ButtonToolbar>
 
-              <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="user" />Pobierz zdjęcie Profilowe
+              <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="edit" />Pobierz zdjęcie Profilowe
                 <FileInput name="myImage"
                            accept=".png,.gif"
                            placeholder="My Image"
                            className="inputClass"
                            onChange={this.handleFileChange}/></Button>
-              <Button className="well2" bsSize="large" block><Glyphicon glyph="star" />Załaduj zdjęcie Profilowe</Button>
+              <Button className="well2" bsSize="large" block><Glyphicon glyph="share" />Załaduj zdjęcie Profilowe</Button>
 
             </ButtonToolbar>
 
