@@ -80,7 +80,7 @@ const BurgerMenuWrapper = (props) => (
 
 
         <Navbar.Text className={styles.userMenu}>
-          <LinkContainer to="/" onClick={() => firebase.signOut()}>
+          <LinkContainer to="/" onClick={() => firebase.auth().signOut()}>
             <Navbar.Link href="/"><Glyphicon glyph="log-out"/></Navbar.Link>
           </LinkContainer>
         </Navbar.Text>
