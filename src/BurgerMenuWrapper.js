@@ -3,6 +3,8 @@ import { push as BurgerMenu } from 'react-burger-menu'
 import Popap2 from './Popap2'
 import PPopap2 from './PPopap2'
 import {Image, Button, Navbar, Glyphicon} from 'react-bootstrap'
+import { LinkContainer } from 'react-router-bootstrap'
+import firebase from 'firebase'
 
 
 
@@ -78,8 +80,9 @@ const BurgerMenuWrapper = (props) => (
 
 
         <Navbar.Text className={styles.userMenu}>
-          {/*<Navbar.Link href="#"><Glyphicon glyph="home"/></Navbar.Link>*/}
-          <Navbar.Link href="./Login.js"><Glyphicon glyph="log-out"/></Navbar.Link>
+          <LinkContainer to="/" onClick={() => firebase.auth().signOut()}>
+            <Navbar.Link href="/"><Glyphicon glyph="log-out"/></Navbar.Link>
+          </LinkContainer>
         </Navbar.Text>
 
 
