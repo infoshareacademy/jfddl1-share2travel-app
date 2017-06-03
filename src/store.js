@@ -13,7 +13,7 @@ const enhancer = composeEnhancers(
   applyMiddleware(
     thunk
   ),
-  persistState(['smartCounter','favoriteProducts'], { key: 'app2'})
+  persistState(['favoriteProducts'], { key: 'app3'})
 )
 
 const reducer = combineReducers({
