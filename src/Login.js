@@ -5,7 +5,6 @@ import React, { Component, } from 'react';
 import './Login.css';
 import {Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
 import PPopup from "./PPopup";
-// import {Link} from 'react-router-dom'
 import * as firebase from 'firebase';
 import './App';
 function FieldGroup({ id, label, help, ...props }) {

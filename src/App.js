@@ -18,7 +18,6 @@ import {
 import { connect } from 'react-redux'
 import BurgerMenuWrapper from './BurgerMenuWrapper'
 import TopNavigation from './TopNavigation'
-// import './store'
 
 const links = [
   { path: '/', label: 'Home' },
@@ -44,15 +43,6 @@ class App extends React.Component{
     });
   }
 
-
-  // constructor(){
-  //   super():
-  //   firebase.auth().signOut().then(function() {
-  //     // Sign-out successful.
-  //   }).catch(function(error) {
-  //     // An error happened.
-  //   });
-  // }
 
   render() {
     return (

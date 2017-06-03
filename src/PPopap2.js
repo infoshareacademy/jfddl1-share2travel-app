@@ -1,6 +1,4 @@
 import React from 'react';
-// import ReactDOM from 'react-dom';
-// import './Login.css';
 import { Button, Modal, Glyphicon} from 'react-bootstrap'
 
 class PPopap2 extends React.Component{

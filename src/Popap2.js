@@ -68,15 +68,6 @@ class Popap2 extends React.Component {
 
         var user = firebase.auth().currentUser;
 
-        // user.updateProfile({
-        //   displayName: "User",
-        //   photoURL: "#"
-        // }).then(function() {
-        //   // Update successful.
-        // }, function(error) {
-        //   // An error happened.
-        // });
-
       });
   }
 
@@ -121,15 +112,7 @@ class Popap2 extends React.Component {
               </Button>
 
               <Button bsStyle="primary">Default button
-                {/*<Input type='file' label='Upload' accept='.png.gif'*/}
-
-                       {/*ref={ function(ref) { this.fileUpload = ref }.bind(this)}*/}
-                {/*/>*/}
               </Button>
-
-            {/*/!*<LoadingButton/>*!/     load*/}
-
-              {/*<Button><Glyphicon glyph="star"/> START</Button>*/}
             </ButtonToolbar>
 
           </Modal.Body>

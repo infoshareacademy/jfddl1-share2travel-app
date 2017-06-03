@@ -2,7 +2,6 @@
  * Created by piotrgolianek on 15.05.17.
  */
 import React from 'react';
-// import ReactDOM from 'react-dom';
 import './Login.css';
 import { Button, Modal, Glyphicon} from 'react-bootstrap'
 

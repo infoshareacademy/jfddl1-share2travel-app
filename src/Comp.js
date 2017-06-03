@@ -11,8 +11,6 @@ const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(locatio
 import {fetchProducts} from './state/products'
 import * as firebase from 'firebase';
 
-// Initialize Firebase
-
 
 export default connect(
   state => ({
@@ -74,8 +72,6 @@ export default connect(
 
       const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseInt(e.price,10)}) : null;
 
-      // const storageRef = firebase.storage().ref('x');
-
       return product === null ? <p>Ładowanie produktu</p> : (
         <div>
           <Panel className='Comp-center Comp-panel' bsStyle="primary" header={product.productName}>
@@ -96,7 +92,6 @@ export default connect(
                 Materiał: {product.productMaterial}<br/>
                 Kolor: {product.color}<br/>
                 ID: {product.id}<br/>
-                {/*{product.id}*/}
 
 
               </p>
@@ -105,16 +100,6 @@ export default connect(
                                                  href={face}>Udostępnij</a>
                 <br/>
                 <br/>
-                {/*<button onClick={() => addToFavorites(product.uid)}*/}
-                        {/*disabled={favIds.includes(product.uid)}>*/}
-                  {/*Dodaj do ulubionych*/}
-                {/*</button>*/}
-                {/*<button*/}
-                  {/*onClick={() => removeFromFavorites(product.uid)}*/}
-                  {/*disabled={!favIds.includes(product.uid)}>*/}
-
-                  {/*Usuń z ulubionych*/}
-                {/*</button>*/}
                 <div>
                     <label>
 
@@ -161,14 +146,6 @@ export default connect(
               <Chart
                 series={[{
                   data: this.state.x
-
-                  //   .map(item => parseFloat(product.price)).map((item, index, array) => {
-                  //   if (index === 0) {
-                  //     return item
-                  //   }
-                  //   return item + Math.round(Math.random() * 10) - 5
-                  // }).reverse()
-
                 }]}/>
             </Col>
           </Row>

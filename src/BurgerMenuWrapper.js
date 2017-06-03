@@ -2,8 +2,6 @@ import React from 'react'
 import { push as BurgerMenu } from 'react-burger-menu'
 import Popap2 from './Popap2'
 import PPopap2 from './PPopap2'
-
-// import { Link } from 'react-router-dom'
 import {Image, Button, Navbar, Glyphicon} from 'react-bootstrap'
 
 
@@ -84,29 +82,6 @@ const BurgerMenuWrapper = (props) => (
           <Navbar.Link href="./Login.js"><Glyphicon glyph="log-out"/></Navbar.Link>
         </Navbar.Text>
 
-
-      {/*<button class="btn btn-success"><i class="fa fa-edit m-right-xs"></i>Edit Profile</button>*/}
-
-        {/*<Button onClick={()=> this.setState({ open: !this.state.open })}>*/}
-          {/*click*/}
-        {/*</Button>*/}
-        {/*<Fade in={this.state.open}>*/}
-          {/*<div>*/}
-            {/*<Well>*/}
-              {/*Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.*/}
-              {/*Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident.*/}
-            {/*</Well>*/}
-          {/*</div>*/}
-        {/*</Fade>*/}
-      {/*<div>*/}
-
-
-        {/*<li class="m-top-xs">*/}
-          {/*<i class="fa fa-external-link user-profile-icon"></i>*/}
-          {/*<a href="http://www.kimlabs.com/profile/" target="_blank">www.kimlabs.com</a>*/}
-        {/*</li>*/}
-
-      {/*</div>*/}
 
     </BurgerMenu>
     <div id="page-wrap">
