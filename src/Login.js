@@ -40,7 +40,13 @@ class Login extends React.Component {
       password: e.target.value
     });
   }
-
+  createUserHandler = (e) => {
+    e.preventDefault();
+      firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
+          console.log('Error');
+          // ...
+      });
+  }
 
 
   contentTxt = {
@@ -58,26 +64,20 @@ class Login extends React.Component {
       eros eget ligula. Phasellus interdum mauris nec eros finibus consectetur id interdum massa.</p>,
     modal2: <div>
       <p>W celu założenia konta w aplikacji To Buy wypełnij poniższe pola.</p>
-      <form>
+      <form onSubmit={this.createUserHandler}>
         <FieldGroup
-          id="formControlsText"
-          type="text"
-          placeholder="Wprowadź nazwę użytkownika"
+            id="formControlsEmail"
+            type="email"
+            placeholder="Wprowadź adres e-mail"
+            required
+            onChange={this.emailChangeHandler}
         />
         <FieldGroup
           id="formControlsPassword"
           placeholder="Wprowadź hasło"
           type="password"
-        />
-        <FieldGroup
-          id="formControlsPassword"
-          placeholder="Powtórz hasło"
-          type="password"
-        />
-        <FieldGroup
-          id="formControlsEmail"
-          type="email"
-          placeholder="Wprowadź adres e-mail"
+          required
+          onChange={this.passwordChangeHandler}
         />
         <Button type="submit" className="center-block btn-submit">
           Wyślij <Glyphicon glyph="arrow-down"/>
