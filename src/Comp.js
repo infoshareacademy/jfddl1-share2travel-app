@@ -33,7 +33,10 @@ export default connect(
 
     componentWillMount() {
       this.props.fetchProducts()
-      firebase.database().ref('/productsByUid/').child(this.props.match.params.productId).child('/pricesArray/').on('value', (snapshot) => {
+      firebase.database().ref('/productsByUid/').child(
+        // this.props.match.params.productId
+        '/12434cc7-6cfb-4d86-a58d-9aa118a9c9bc/'
+      ).child('/pricesArray/').on('value', (snapshot) => {
         this.setState({
           x: snapshot.val()
         })
@@ -154,6 +157,7 @@ export default connect(
 
           <Row>
             <Col className='Comp-wykresik' lg={6}>
+              {console.log(this.state.x)}
               <Chart
                 series={[{
                   data: this.state.x

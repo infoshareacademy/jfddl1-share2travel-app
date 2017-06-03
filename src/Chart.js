@@ -23,17 +23,15 @@ const config = {
     text: 'Historia cen'
   },
   xAxis: {
-    // categories: [weekday[w.getDay()-6],weekday[w.getDay()-5],weekday[w.getDay()-4],weekday[w.getDay()-3],weekday[w.getDay()-2],weekday[w.getDay()-1],currentDay]
   type: 'datetime'
   },
   yAxis: {
     title: {
       text: 'Cena'
-    }
+    },
   },
   series: [{
     name: 'ceny',
-    data: [29.9, 71.5, 106.4, 129.2, 144.0, 176.0, 135.6]
   }]
 };
 
