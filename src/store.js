@@ -9,8 +9,6 @@ import products from './state/products'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// const isLogged = false;
-
 const enhancer = composeEnhancers(
   applyMiddleware(
     thunk
@@ -27,7 +25,6 @@ const reducer = combineReducers({
 const store = createStore(
   reducer,
   enhancer,
-  // isLogged
 )
 
 export default store

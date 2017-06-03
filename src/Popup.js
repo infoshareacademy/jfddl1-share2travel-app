@@ -7,7 +7,7 @@ import {
 
 class Popup extends React.Component {
   state = {
-    showModal: true
+    showModal: false
   }
 
   close = () => this.setState({ showModal: false })
@@ -15,14 +15,6 @@ class Popup extends React.Component {
   open = () => this.setState({ showModal: true })
 
   render = () => {
-    // const popover = (
-    //   <Popover id="modal-popover" title="popover">
-    //   </Popover>
-    // );
-    // const tooltip = (
-    //   <Tooltip id="modal-tooltip">
-    //   </Tooltip>
-    // );
 
     return (
       <div>

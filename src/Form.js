@@ -8,7 +8,6 @@ export default class Form extends Component{
     }
 
     onInputChange(event){
-        // console.log(event.target.value)
         this.props.onUserChange(event.target.value)
     }
 }

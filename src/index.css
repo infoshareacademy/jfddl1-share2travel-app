@@ -21,3 +21,14 @@ body {
   background-color: #666666;
   color: black;
 }
+.b1{
+  position: relative;
+}
+.b1 div{
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+

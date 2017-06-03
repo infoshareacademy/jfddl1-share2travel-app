@@ -10,10 +10,22 @@ import store from './store'
 
 import App from './App';
 import './index.css';
+import * as firebase from 'firebase';
 
+
+// Initialize Firebase
+var config = {
+  apiKey: "AIzaSyCF4_K4fufQdHxs0cr3wYekXFs37Vu2qkE",
+  authDomain: "share2travel-1994c.firebaseapp.com",
+  databaseURL: "https://share2travel-1994c.firebaseio.com",
+  projectId: "share2travel-1994c",
+  storageBucket: "share2travel-1994c.appspot.com",
+  messagingSenderId: "385410885455"
+};
+firebase.initializeApp(config);
 ReactDOM.render(
     <Provider store={store}>
-  <App />
+      <App />
     </Provider>,
   document.getElementById('root')
 );

@@ -1,5 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
+import Toggle from 'react-toggle'
 
 import {add, remove} from './state/favoriteProducts'
 import {Row, Col, ButtonToolbar, Button, Panel} from 'react-bootstrap';
@@ -8,6 +9,8 @@ import './Comp.css'
 
 const face = 'http://www.facebook.com/share.php?u=' + encodeURIComponent(location.href);
 import {fetchProducts} from './state/products'
+import * as firebase from 'firebase';
+
 
 export default connect(
   state => ({
@@ -21,15 +24,30 @@ export default connect(
   })
 )(
   class Comp extends React.Component {
+
+    state = {
+      x:'0'
+    }
+
     componentWillMount() {
       this.props.fetchProducts()
+      firebase.database().ref('/productsByUid/').child(
+        // this.props.match.params.productId
+        '/12434cc7-6cfb-4d86-a58d-9aa118a9c9bc/'
+      ).child('/pricesArray/').on('value', (snapshot) => {
+        this.setState({
+          x: snapshot.val()
+        })
+      })
     }
 
     constructor(props) {
       super(props);
+      console.log('firebase', firebase);
       this.state = {
         searchPhrase: '',
-        products: null
+        products: null,
+
       };
       fetch(
         process.env.PUBLIC_URL + '/data/products.json'
@@ -52,7 +70,7 @@ export default connect(
           product => product.uid === productUid
         ) : null;
 
-      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return e.price}) : null;
+      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseInt(e.price,10)}) : null;
 
       return product === null ? <p>Ładowanie produktu</p> : (
         <div>
@@ -73,7 +91,7 @@ export default connect(
                 Kategoria: {product.department}<br/>
                 Materiał: {product.productMaterial}<br/>
                 Kolor: {product.color}<br/>
-                ID: {product.id}
+                ID: {product.id}<br/>
 
 
               </p>
@@ -82,26 +100,38 @@ export default connect(
                                                  href={face}>Udostępnij</a>
                 <br/>
                 <br/>
-                <button onClick={() => addToFavorites(product.uid)}
-                        disabled={favIds.includes(product.uid)}>
-                  Dodaj do ulubionych
-                </button>
-                <button
-                  onClick={() => removeFromFavorites(product.uid)}
-                  disabled={!favIds.includes(product.uid)}>
+                <div>
+                    <label>
 
-                  Usuń z ulubionych
-                </button>
+
+
+                            {
+                              favIds.includes(product.uid) ?
+                                <Toggle
+                                  checked={true}
+                                  aria-label='Usuń z ulubionych'
+                                  onChange={() => removeFromFavorites(product.uid)}/> :
+                                <Toggle
+                                  checked={false}
+                                  aria-label='Dodaj do ulubionych'
+                                  onChange={() => addToFavorites(product.uid)}/>
+                            }
+
+                         <br/>
+                        <p>Dodaj do ulubionych</p>
+
+                    </label>
+                </div>
 
               </div>
             </Col>
             <Col className='Comp-firstRowButtons' lg={4}>
               <ButtonToolbar>
 
-                {similarProductsPrices.map(price => (
-                  <Button className="Comp-button" bsStyle="info">
-                    <img className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
-                    <span className="Comp-price">
+                {similarProductsPrices.sort(function(a, b){return b-a}).reverse().map(price => (
+                  <Button  key={products.uid} className="Comp-button" bsStyle="info">
+                    <img  className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
+                    <span  className="Comp-price">
                     {parseInt(price, 10) + ' zł'}
                     </span>
                   </Button>))}
@@ -112,17 +142,10 @@ export default connect(
 
           <Row>
             <Col className='Comp-wykresik' lg={6}>
+              {console.log(this.state.x)}
               <Chart
                 series={[{
-                  data: [0, 0, 0, 0, 0, 0, 0]
-
-                  //   .map(item => parseFloat(product.price)).map((item, index, array) => {
-                  //   if (index === 0) {
-                  //     return item
-                  //   }
-                  //   return item + Math.round(Math.random() * 10) - 5
-                  // }).reverse()
-
+                  data: this.state.x
                 }]}/>
             </Col>
           </Row>
