@@ -36,10 +36,10 @@ const config = {
 };
 
 class Chart extends React.Component {
-  componentDidMount() {
-    let chart = this.refs.chart.getChart();
-    chart.series[0].addPoint({x: 6});
-  }
+  // componentDidMount() {
+  //   let chart = this.refs.chart.getChart();
+  //   chart.series[0].addPoint({x: 6});
+  // }
 
   render() {
     return <ReactHighcharts className='wykres' config={{...config, series: this.props.series}} ref="chart"></ReactHighcharts>;
