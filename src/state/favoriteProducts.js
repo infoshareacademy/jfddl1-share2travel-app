@@ -32,9 +32,12 @@ export default (state = initialState, action) => {
         });
       return newState;
     case REMOVE:
-      return state.filter(
+      var removeState = state.filter(
         productId => productId !== action.productId
-      )
+      );
+      var userIds = firebase.auth().currentUser.uid;
+      firebase.database().ref('/').child('favourites').child(userIds).set(removeState);
+      return removeState;
     default:
       return state
   }
