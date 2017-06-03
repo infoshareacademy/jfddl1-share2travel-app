@@ -140,7 +140,7 @@ export default connect(
             <Col className='Comp-firstRowButtons' lg={4}>
               <ButtonToolbar>
 
-                {similarProductsPrices.map(price => (
+                {similarProductsPrices.sort(function(a, b){return b-a}).reverse().map(price => (
                   <Button  key={products.uid} className="Comp-button" bsStyle="info">
                     <img  className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
                     <span  className="Comp-price">
