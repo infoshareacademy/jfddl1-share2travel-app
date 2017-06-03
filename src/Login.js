@@ -90,7 +90,6 @@ class Login extends React.Component {
             // ...
         });
     }
-
   contentTxt = {
     modal1: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur quam vel nibh interdum,
       vitae tincidunt sapien dignissim. Sed mollis rhoncus aliquam. Cras enim dolor, sagittis in tortor ut, lacinia
