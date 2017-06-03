@@ -26,8 +26,18 @@ export default connect(
   })
 )(
   class Comp extends React.Component {
+
+    state = {
+      x:'0'
+    }
+
     componentWillMount() {
       this.props.fetchProducts()
+      firebase.database().ref('/productsByUid/').child(this.props.match.params.productId).child('/pricesArray/').on('value', (snapshot) => {
+        this.setState({
+          x: snapshot.val()
+        })
+      })
     }
 
     constructor(props) {
@@ -59,7 +69,7 @@ export default connect(
           product => product.uid === productUid
         ) : null;
 
-      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return e.price}) : null;
+      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseInt(e.price,10)}) : null;
 
       // const storageRef = firebase.storage().ref('x');
 
@@ -82,7 +92,7 @@ export default connect(
                 Kategoria: {product.department}<br/>
                 Materiał: {product.productMaterial}<br/>
                 Kolor: {product.color}<br/>
-                {/*ID: {storageRef}*/}
+                ID: {product.id}<br/>
                 {/*{product.id}*/}
 
 
@@ -146,7 +156,7 @@ export default connect(
             <Col className='Comp-wykresik' lg={6}>
               <Chart
                 series={[{
-                  data: [0, 0, 0, 0, 0, 0, 0]
+                  data: this.state.x
 
                   //   .map(item => parseFloat(product.price)).map((item, index, array) => {
                   //   if (index === 0) {
