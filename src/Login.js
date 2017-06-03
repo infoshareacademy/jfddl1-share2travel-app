@@ -52,7 +52,7 @@ class Login extends React.Component {
 
   loginWithGoogleHandler = (e) => {
       var provider = new firebase.auth.GoogleAuthProvider();
-    e.preventDefault();
+      e.preventDefault();
       firebase.auth().signInWithPopup(provider).then(function(result) {
           // This gives you a Google Access Token. You can use it to access the Google API.
           var token = result.credential.accessToken;
@@ -70,7 +70,26 @@ class Login extends React.Component {
           // ...
       });
   }
-
+    loginWithFacebookHandler = (e) => {
+        var providerSecond = new firebase.auth.FacebookAuthProvider();
+        e.preventDefault();
+        firebase.auth().signInWithPopup(providerSecond).then(function(result) {
+            // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            var user = result.user;
+            // ...
+        }).catch(function(error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // The email of the user's account used.
+            var email = error.email;
+            // The firebase.auth.AuthCredential type that was used.
+            var credential = error.credential;
+            // ...
+        });
+    }
 
   contentTxt = {
     modal1: <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas consectetur quam vel nibh interdum,
@@ -142,7 +161,7 @@ class Login extends React.Component {
         <Row className="show-grid">
           <div className="social-media">
             <Col lgOffset={2} lg={4} xs={12}>
-              <Button className="center-block btn-fb" bsStyle="primary" bsSize="large" >Logowanie z <span
+              <Button className="center-block btn-fb" bsStyle="primary" bsSize="large" onClick={this.loginWithFacebookHandler}>Logowanie z <span
                 className="text-bold"> Facebook</span></Button>
             </Col>
             <Col lg={4} xs={12}>
