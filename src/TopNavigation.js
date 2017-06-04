@@ -12,8 +12,6 @@ import {
   IndexLinkContainer
 } from 'react-router-bootstrap'
 
-
-
 const TopNavigation = (props) => (
   <Navbar>
     <Navbar.Header>
@@ -39,7 +37,7 @@ const TopNavigation = (props) => (
         event.preventDefault()
         props.toggleSidebar(true)
       }}>
-        <Glyphicon glyph="user" /> Profil
+        <Glyphicon glyph="user"/> Profil
       </NavItem>
     </Nav>
   </Navbar>

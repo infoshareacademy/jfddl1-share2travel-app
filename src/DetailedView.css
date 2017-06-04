@@ -1,57 +1,71 @@
-.Comp-img{
-    width:100%;
+.SocialMediaShareButton {
+    display: inline-block;
+}
+
+.DetailedView-img {
+    width: 100%;
     height: auto;
 }
-.Comp-button{
-    width:100%;
+
+.DetailedView-button {
+    width: 100%;
     margin: 0.4em;
 }
 
-.Comp-button img{
+.DetailedView-button img {
     float: left;
-    height:20%;
-    width:20%;
+    height: 20%;
+    width: 20%;
 }
-.Comp-h1{
+
+.DetailedView-h1 {
     border-bottom: 5px solid #337ab7;
     padding-bottom: 5px;
-    color:#337ab7;
+    color: #337ab7;
     align-items: flex-start;
 }
-.Comp-p{
-    font-size:20px;
+
+.DetailedView-p {
+    font-size: 20px;
     text-align: center;
 }
-.Comp-left{
-    float:left;
+
+.DetailedView-left {
+    float: left;
 }
-.Comp-right{
-    height:10%;
-    width:10%;
-    float:right;
+
+.DetailedView-right {
+    height: 10%;
+    width: 10%;
+    float: right;
 }
-.Comp-center{
+
+.DetailedView-center {
     text-align: center;
 }
-.Comp-price{
+
+.DetailedView-price {
     font-size: 2em;
 }
-.Comp-vertical-align {
+
+.DetailedView-vertical-align {
     display: flex;
     align-items: center;
 }
-.Comp-wykresik{
-    width:100%;
-    height:auto;   
+
+.DetailedView-wykresik {
+    width: 100%;
+    height: auto;
 }
-.Comp-opis{
+
+.DetailedView-opis {
     align-items: flex-start;
     text-align: center;
 }
 
-.Comp-list{
+.DetailedView-list {
 
-    color:#000;
+    color: #000;
     font-weight: 800;
     font-size: 2rem;
     background-color: #9abbd8;
@@ -61,16 +75,20 @@
     text-align: center;
 
 }
-Comp-FP-div{
-flex-wrap:wrap;
+
+DetailedView-FP-div {
+    flex-wrap: wrap;
 }
-.Comp-div-FavoriteProducts{
+
+.DetailedView-div-FavoriteProducts {
     text-align: center;
 }
-.Comp-butt{
-    font-weight:400;
+
+.DetailedView-butt {
+    font-weight: 400;
 
 }
+
 .react-toggle {
     touch-action: pan-x;
 
@@ -88,7 +106,7 @@ flex-wrap:wrap;
     -ms-user-select: none;
     user-select: none;
 
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
 }
 
@@ -212,10 +230,12 @@ flex-wrap:wrap;
     -moz-box-shadow: 0px 0px 5px 5px #0099E0;
     box-shadow: 0px 0px 5px 5px #0099E0;
 }
-.Comp-panel{
+
+.DetailedView-panel {
     font-size: 2em;
 }
-#b2{
+
+#b2 {
     background-color: red;
 
 }

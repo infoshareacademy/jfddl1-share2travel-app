@@ -1,49 +1,39 @@
-
 import React from 'react';
-import Karola from'./Karola';
+import Home from'./Home';
 import FavoriteProducts from './FavoriteProducts'
-import Comp from './Comp'
+import DetailedView from './DetailedView'
 import Popup from './Popup'
 import Login from './Login'
 import * as firebase from 'firebase';
-
-import {
-  BrowserRouter as Router,
-  Route} from 'react-router-dom'
-import {
-  Grid,
-  Col,
-  Row,
-} from 'react-bootstrap'
-import { connect } from 'react-redux'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {Grid, Col, Row,} from 'react-bootstrap'
+import {connect} from 'react-redux'
 import BurgerMenuWrapper from './BurgerMenuWrapper'
 import TopNavigation from './TopNavigation'
 
 const links = [
-  { path: '/', label: 'Home' },
-  { path: '/Karola', label: 'Wyszukaj' },
-  { path: '/FavoriteProducts', label: 'Ulubione' },
+  {path: '/', label: 'Home'},
+  {path: '/Home', label: 'Wyszukaj'},
+  {path: '/FavoriteProducts', label: 'Ulubione'},
 ]
 
 var isLogged = false;
 
-class App extends React.Component{
+class App extends React.Component {
 
   state = {
     profilePhoto: ''
   }
 
-  constructor(){
+  constructor() {
     super();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        console.log('USER IS LOGGED IN!');
         isLogged = true;
         this.setState({
           profilePhoto: firebase.auth().currentUser.photoURL
         });
       } else {
-        console.log('USER IS NOT LOGGED IN!');
         isLogged = false;
       }
       this.forceUpdate();
@@ -55,10 +45,10 @@ class App extends React.Component{
     return (
       <Router>
 
-        {function(){
+        {function () {
 
-          if(isLogged){
-            return(
+          if (isLogged) {
+            return (
               <div>
                 <BurgerMenuWrapper
                   profilePhoto={this.state.profilePhoto}
@@ -74,10 +64,10 @@ class App extends React.Component{
                   <Grid>
                     <Row>
                       <Col md={12}>
-                        <Route exact path="/"  component={Popup} />
-                        <Route path="/Karola" component={Karola}/>
-                        <Route path="/Comp" component={Comp}/>
-                        <Route path="/products/:productId" component={Comp}/>
+                        <Route exact path="/" component={Popup}/>
+                        <Route path="/Home" component={Home}/>
+                        <Route path="/DetailedView" component={DetailedView}/>
+                        <Route path="/products/:productId" component={DetailedView}/>
                         <Route path="/start" component={Popup}/>
                         <Route path="/FavoriteProducts" component={FavoriteProducts}/>
 
@@ -86,15 +76,16 @@ class App extends React.Component{
                   </Grid>
                 </BurgerMenuWrapper>
               </div>
-            )}
+            )
+          }
 
-          else{
-            return(
+          else {
+            return (
               <div>
                 <Grid>
                   <Row>
                     <Col md={12}>
-                      <Route exact path="/"  component={Login} />
+                      <Route exact path="/" component={Login}/>
                     </Col>
                   </Row>
                 </Grid>
@@ -114,7 +105,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  toggleSidebar: (shouldBeOpen) => dispatch({ type: 'TOGGLE_SIDEBAR', shouldBeOpen: shouldBeOpen})
+  toggleSidebar: (shouldBeOpen) => dispatch({type: 'TOGGLE_SIDEBAR', shouldBeOpen: shouldBeOpen})
 })
 
 export default connect(

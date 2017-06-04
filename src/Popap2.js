@@ -8,10 +8,7 @@ import {
   // LoadingButton
 } from 'react-bootstrap'
 import * as firebase from 'firebase'
-// import Load from './Load';
 import FileInput from 'react-file-input'
-
-
 
 class Popap2 extends React.Component {
   state = {
@@ -24,11 +21,9 @@ class Popap2 extends React.Component {
   }
 
   componentWillMount() {
-    console.log('popap', FileInput);
   }
 
   handleFileChange = (event) => {
-    console.log('Selected file:', event.target.files[0]);
     // File or Blob named mountains.jpg
     var file = event.target.files[0];
     // Create the file metadata
@@ -73,9 +68,7 @@ class Popap2 extends React.Component {
         user.updateProfile({
           photoURL: downloadURL
         }).then(function () {
-          console.log('USER UPDATED', firebase.auth().currentUser);
         }, function (error) {
-          console.log('USER ERROR PHOTO NOT UPDATE');
           // An error happened.
         });
 
@@ -83,20 +76,16 @@ class Popap2 extends React.Component {
   }
 
 
+  close = () => this.setState({showModal: false})
 
-
-
-
-  close = () => this.setState({ showModal: false })
-
-  open = () => this.setState({ showModal: true })
+  open = () => this.setState({showModal: true})
 
   render = () => {
 
     return (
       <div>
 
-        <Image className="center-block brand-image" />
+        <Image className="center-block brand-image"/>
         <br />
         <Button
           bsStyle="info"
@@ -114,12 +103,12 @@ class Popap2 extends React.Component {
 
 
             <ButtonToolbar>
-              <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="edit" />Edytuj zdjęcie
+              <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="edit"/>Edytuj zdjęcie
                 <FileInput name="myImage"
-                  accept=".jpeg,.jpg,.png,.gif"
-                  placeholder="My Image"
-                  className="inputClass"
-                  onChange={this.handleFileChange} />
+                           accept=".jpeg,.jpg,.png,.gif"
+                           placeholder="My Image"
+                           className="inputClass"
+                           onChange={this.handleFileChange}/>
               </Button>
 
 
