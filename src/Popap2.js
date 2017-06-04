@@ -4,6 +4,7 @@ import {
   Modal,
   Button,
   ButtonToolbar,
+  Glyphicon
   // LoadingButton
 } from 'react-bootstrap'
 import * as firebase from 'firebase'
@@ -39,7 +40,8 @@ class Popap2 extends React.Component {
       function (snapshot) {
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
         var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-        console.log('Upload is ' + progress + '% done');
+        alert('Upload is ' + progress + '% done');
+        alert('Zdjęcie załadowano. Odśwież stronę internetową');
         switch (snapshot.state) {
           case firebase.storage.TaskState.PAUSED: // or 'paused'
             console.log('Upload is paused');
@@ -112,7 +114,7 @@ class Popap2 extends React.Component {
 
 
             <ButtonToolbar>
-              <Button className="b1" bsStyle="primary">Edytuj zdjęcie
+              <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="edit" />Edytuj zdjęcie
                 <FileInput name="myImage"
                   accept=".jpeg,.jpg,.png,.gif"
                   placeholder="My Image"
@@ -120,8 +122,7 @@ class Popap2 extends React.Component {
                   onChange={this.handleFileChange} />
               </Button>
 
-              <Button bsStyle="primary">Default button
-              </Button>
+
             </ButtonToolbar>
 
           </Modal.Body>
