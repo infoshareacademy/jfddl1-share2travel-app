@@ -74,11 +74,10 @@ const BurgerMenuWrapper = (props) => (
       </ul>
       <li style={divStyle}>Lublin, Poland</li>
 
-      <Navbar.Text className={styles.userMenu}>
+
         <LinkContainer to="/" onClick={() => firebase.auth().signOut()}>
           <Navbar.Link style={{paddingLeft: 0}} href="/"><Glyphicon glyph="log-out"/> Wyloguj</Navbar.Link>
         </LinkContainer>
-      </Navbar.Text>
 
     </BurgerMenu>
     <div id="page-wrap">
