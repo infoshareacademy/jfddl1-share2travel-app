@@ -135,30 +135,7 @@ class Popap2 extends React.Component {
               </Button>
               <Button className="well2" bsSize="large" block><Glyphicon glyph="share" />Załaduj zdjęcie Profilowe</Button>
 
-              {/*<label class="fileContainer">*/}
-                {/*Click here to trigger the file uploader!*/}
-                {/*<input type="file"/>*/}
-              {/*</label>*/}
-              {/*</div>*/}
 
-              {/*<Button className="b1" bsStyle="primary">Edytuj zdjęcie*/}
-              {/*<FileInput name="myImage"*/}
-              {/*accept=".png,.gif"*/}
-              {/*placeholder="My Image"*/}
-              {/*className="inputClass"*/}
-              {/*onChange={this.handleFileChange}/>*/}
-              {/*</Button>*/}
-
-              {/*<Button bsStyle="primary">Default button*/}
-              {/*<Input type='file' label='Upload' accept='.png.gif'*/}
-
-              {/*ref={ function(ref) { this.fileUpload = ref }.bind(this)}*/}
-              {/*/>*/}
-              {/*</Button>*/}
-
-              {/*/!*<LoadingButton/>*!/     load*/}
-
-              {/*<Button><Glyphicon glyph="star"/> START</Button>*/}
             </ButtonToolbar>
 
           </Modal.Body>
