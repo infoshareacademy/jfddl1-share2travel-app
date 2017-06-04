@@ -29,12 +29,19 @@ var isLogged = false;
 
 class App extends React.Component{
 
+  state = {
+    profilePhoto: ''
+  }
+
   constructor(){
     super();
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         console.log('USER IS LOGGED IN!');
         isLogged = true;
+        this.setState({
+          profilePhoto: firebase.auth().currentUser.photoURL
+        });
       } else {
         console.log('USER IS NOT LOGGED IN!');
         isLogged = false;
@@ -54,6 +61,7 @@ class App extends React.Component{
             return(
               <div>
                 <BurgerMenuWrapper
+                  profilePhoto = {this.state.profilePhoto}
                   isOpen={this.props.sidebarOpen}
                   toggleSidebar={this.props.toggleSidebar}
                   onStateChange={(state) => this.props.toggleSidebar(state.isOpen)}

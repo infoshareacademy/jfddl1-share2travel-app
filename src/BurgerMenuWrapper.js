@@ -59,7 +59,7 @@ const BurgerMenuWrapper = (props) => (
       pageWrapId={ "page-wrap" }
       outerContainerId={ "outer-container" }
     >
-      <Image style={divStyle} className="Profile-center" src={process.env.PUBLIC_URL + '/images/profile.png'}/>
+      <Image style={divStyle} className="Profile-center" src={props.profilePhoto}/>
 
      <PPopap2/>
       <Popap2/>
