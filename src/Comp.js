@@ -70,7 +70,8 @@ export default connect(
           product => product.uid === productUid
         ) : null;
 
-      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseFloat(e.price,10).toFixed(2)}) : null;
+      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseInt(e.price,10)}) : null;
+      // let productid = product.id;
 
       return product === null ? <p>Ładowanie produktu</p> : (
         <div>
@@ -79,7 +80,7 @@ export default connect(
 
           <Row className='Comp-vertical-align'>
             <Col lg={4}>
-              <img className="Comp-img" src={process.env.PUBLIC_URL + '/shoe.jpg'} alt=''/>
+              <img className="Comp-img" src={process.env.PUBLIC_URL + '/images/'+product.id+'.jpg'} alt=''/>
             </Col>
             <Col className='Comp-opis' lg={4}>
               <h1 className="Comp-h1">Opis produktu</h1>
@@ -132,7 +133,7 @@ export default connect(
                   <Button  key={products.uid} className="Comp-button" bsStyle="info">
                     <img  className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
                     <span  className="Comp-price">
-                    {parseFloat(price, 10).toFixed(2) + ' zł'}
+                    {parseInt(price, 10) + ' zł'}
                     </span>
                   </Button>))}
 
