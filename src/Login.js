@@ -29,8 +29,8 @@ class Login extends React.Component {
     e.preventDefault();
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(() => {
-          console.log("Zalogowano");
-      }).catch((e => console.log(e.message)))
+          alert("Zalogowano");
+      }).catch((e => alert(e.message)))
   }
   emailChangeHandler = (e) => {
     this.setState({
@@ -45,7 +45,7 @@ class Login extends React.Component {
   createUserHandler = (e) => {
     e.preventDefault();
       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-          console.log('Error');
+          alert('Error');
           // ...
       });
   }
@@ -98,8 +98,10 @@ class Login extends React.Component {
         var emailAddress = e.target.value;
 
         auth.sendPasswordResetEmail(emailAddress).then(function () {
+          alert('Wysłano e-mail')
             // Email sent.
         }, function (error) {
+          alert('Nie wysłano e-maila')
             // An error happened.
         });
     }
