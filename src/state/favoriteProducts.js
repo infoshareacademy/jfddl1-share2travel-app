@@ -4,21 +4,24 @@
 export const ADD = 'favoriteProducts/ADD'
 export const REMOVE = 'favoriteProducts/REMOVE'
 export const UPDATE = 'favoriteProducts/UPDATE'
-import * as firebase from 'firebase'
+import * as firebase from "firebase";
 
 export const add = (productId) => ({
-  type: ADD,
-  productId: productId
+    type: ADD,
+    productId: productId
 })
 
 export const remove = (productId) => ({
-  type: REMOVE,
-  productId: productId
-})
-export const update = (productId) => ({
-    type: UPDATE,
+    type: REMOVE,
     productId: productId
 })
+export const update = (payload) => {
+    console.log('ACTION CREATOR UPDATE', payload);
+    return {
+        type: UPDATE,
+        payload: payload
+    }
+}
 
 const initialState = []
 export default (state = initialState, action) => {
@@ -44,8 +47,14 @@ export default (state = initialState, action) => {
             firebase.database().ref('/').child('favourites').child(userIds).set(removeState);
             return removeState;
 
-        case UPDATE :
-            return action.payload
+        case UPDATE :{
+            console.log('ACTION UPDATE', action.payload);
+            if(action.payload){
+                return action.payload;
+            }else{
+                return [];
+            }
+        }
         default:
             return state
 
