@@ -1,5 +1,5 @@
 import React from 'react'
-import Comp from './Comp'
+import DetailedView from './DetailedView'
 
 class Product extends React.Component {
 
@@ -24,7 +24,7 @@ class Product extends React.Component {
   render() {
     const productId = parseInt(this.props.match.params.productId, 10)
     return (
-      <Comp/>
+      <DetailedView/>
     )
   }
 }

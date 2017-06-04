@@ -5,7 +5,7 @@ import * as firebase from "firebase";
 import {add, remove, update} from "./state/favoriteProducts";
 import {Button, ButtonToolbar, Col, Panel, Row} from "react-bootstrap";
 import Chart from "./Chart";
-import "./Comp.css";
+import "./DetailedView.css";
 import {fetchProducts} from "./state/products";
 import {
   generateShareIcon,
@@ -25,7 +25,7 @@ export default connect(
     removeFromFavorites: (productId) => dispatch(remove(productId)),
   })
 )(
-  class Comp extends React.Component {
+  class DetailedView extends React.Component {
 
     state = {
       x: '0'
@@ -83,15 +83,15 @@ export default connect(
 
       return product === null ? <p>Ładowanie produktu</p> : (
         <div>
-          <Panel className='Comp-center Comp-panel' bsStyle="primary" header={product.productName}>
+          <Panel className='DetailedView-center DetailedView-panel' bsStyle="primary" header={product.productName}>
           </Panel>
 
-          <Row className='Comp-vertical-align'>
+          <Row className='DetailedView-vertical-align'>
             <Col lg={4}>
-              <img className="Comp-img" src={process.env.PUBLIC_URL + '/images/' + product.id + '.jpg'} alt=''/>
+              <img className="DetailedView-img" src={process.env.PUBLIC_URL + '/images/' + product.id + '.jpg'} alt=''/>
             </Col>
-            <Col className='Comp-opis' lg={4}>
-              <h1 className="Comp-h1">Opis produktu</h1>
+            <Col className='DetailedView-opis' lg={4}>
+              <h1 className="DetailedView-h1">Opis produktu</h1>
               <p>
 
                 Typ: {product.product}<br/>
@@ -131,16 +131,16 @@ export default connect(
                   round/>
               </FacebookShareButton>
             </Col>
-            <Col className='Comp-firstRowButtons' lg={4}>
+            <Col className='DetailedView-firstRowButtons' lg={4}>
               <ButtonToolbar>
 
                 {similarProductsPrices.sort(function (a, b) {
                   return b - a
                 }).reverse().map((price, index) => (
-                  <Button key={products.uid} className="Comp-button" bsStyle="info">
-                    <img className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/brand' + index + '.png'}
+                  <Button key={products.uid} className="DetailedView-button" bsStyle="info">
+                    <img className="DetailedView-left DetailedView-img" src={process.env.PUBLIC_URL + '/brand' + index + '.png'}
                          alt=""/>
-                    <span className="Comp-price">
+                    <span className="DetailedView-price">
                     {parseFloat(price, 10).toFixed(2) + ' zł'}
                     </span>
                   </Button>))}
@@ -150,7 +150,7 @@ export default connect(
           </Row>
 
           <Row>
-            <Col className='Comp-wykresik' lg={6}>
+            <Col className='DetailedView-wykresik' lg={6}>
               <Chart
                 series={[{
                   data: this.state.x

@@ -5,7 +5,7 @@ import {fetchProducts} from './state/products'
 import {Image, Button} from 'react-bootstrap'
 import {Link} from 'react-router-dom'
 import * as firebase from 'firebase'
-import './Comp.css'
+import './DetailedView.css'
 
 const divStyle = {
   width: '25%',
@@ -47,13 +47,13 @@ export default connect(
           .map((uid) => {
 
             let link = 'products/' + uid;
-            return <div key={uid} className="Comp-div-FavoriteProducts">
+            return <div key={uid} className="DetailedView-div-FavoriteProducts">
 
               {this.props.products.data !== null ?
-                <div className="Comp-FP-div">
+                <div className="DetailedView-FP-div">
 
                   <ul>
-                    <div className="Comp-list">
+                    <div className="DetailedView-list">
                       <li>
                         <Link to={link}>{ this.props.products.data.productsByUid[uid].productName + '  '}</Link>
                         <Image style={divStyle} className="Profile-center"

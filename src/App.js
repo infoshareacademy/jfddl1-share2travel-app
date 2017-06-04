@@ -1,7 +1,7 @@
 import React from 'react';
 import Karola from'./Karola';
 import FavoriteProducts from './FavoriteProducts'
-import Comp from './Comp'
+import DetailedView from './DetailedView'
 import Popup from './Popup'
 import Login from './Login'
 import * as firebase from 'firebase';
@@ -66,8 +66,8 @@ class App extends React.Component {
                       <Col md={12}>
                         <Route exact path="/" component={Popup}/>
                         <Route path="/Karola" component={Karola}/>
-                        <Route path="/Comp" component={Comp}/>
-                        <Route path="/products/:productId" component={Comp}/>
+                        <Route path="/DetailedView" component={DetailedView}/>
+                        <Route path="/products/:productId" component={DetailedView}/>
                         <Route path="/start" component={Popup}/>
                         <Route path="/FavoriteProducts" component={FavoriteProducts}/>
 
