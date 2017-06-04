@@ -8,7 +8,7 @@ import * as firebase from 'firebase'
 import './DetailedView.css'
 
 const divStyle = {
-  width: '25%',
+  width: '15%',
   height: 'auto',
   margin: 'auto',
   color: 'black'
@@ -57,7 +57,7 @@ export default connect(
                       <li>
                         <Link to={link}>{ this.props.products.data.productsByUid[uid].productName + '  '}</Link>
                         <Image style={divStyle} className="Profile-center"
-                               src={process.env.PUBLIC_URL + '/images/comp1.png'}/>
+                               src={process.env.PUBLIC_URL + '/images/'+this.props.products.data.productsByUid[uid].id+'.jpg'}/>
                         <Button bsStyle="info" onClick={() => this.props.removeFromFavorites(uid)}>
                           Usuń z ulubionych
                         </Button>
