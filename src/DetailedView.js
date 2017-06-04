@@ -122,9 +122,9 @@ export default connect(
               </div>
 
               <FacebookShareButton
-                url={'google.pl'}
-                title={'no siema'}
-                // picture={`${String(window.location)}/${exampleImage}`}
+                url={'http://app.share2travel.jfddl1.is-academy.pl/products/'+product.uid+''}
+                title={'Taka okazja dzięki ToBuy!'}
+                // picture={process.env.PUBLIC_URL + '/images/' + product.id + '.jpg'}
               >
                 <FacebookIcon
                   size={50}
