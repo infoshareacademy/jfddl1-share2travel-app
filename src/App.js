@@ -61,7 +61,7 @@ class App extends React.Component{
             return(
               <div>
                 <BurgerMenuWrapper
-                  profilePhoto = {this.state.profilePhoto}
+                  profilePhoto={this.state.profilePhoto}
                   isOpen={this.props.sidebarOpen}
                   toggleSidebar={this.props.toggleSidebar}
                   onStateChange={(state) => this.props.toggleSidebar(state.isOpen)}

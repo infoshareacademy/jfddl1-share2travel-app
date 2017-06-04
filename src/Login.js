@@ -1,13 +1,12 @@
 /**
  * Created by piotrgolianek on 11.05.17.
  */
-import React, { Component, } from 'react';
+import React, {} from 'react';
 import './Login.css';
 import {Row, Image, Col, Button, FormGroup, ControlLabel, FormControl, HelpBlock, Glyphicon} from 'react-bootstrap'
 import PPopup from "./PPopup";
 import * as firebase from 'firebase';
 import './App';
-// import * as toastr from 'toastr';
 function FieldGroup({ id, label, help, ...props }) {
   return (
     <FormGroup controlId={id}>
@@ -21,7 +20,8 @@ class Login extends React.Component {
   state = {
     email: '',
     password: '',
-    show: false
+    show: false,
+      emailTwo: ''
   }
 
 
@@ -29,8 +29,8 @@ class Login extends React.Component {
     e.preventDefault();
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
       .then(() => {
-        console.log('Zalogowano');
-      }).catch((e => console.log(e.message)))
+          alert("Zalogowano");
+      }).catch((e => alert(e.message)))
   }
   emailChangeHandler = (e) => {
     this.setState({
@@ -45,28 +45,27 @@ class Login extends React.Component {
   createUserHandler = (e) => {
     e.preventDefault();
       firebase.auth().createUserWithEmailAndPassword(this.state.email, this.state.password).catch(function(error) {
-          console.log('Error');
+          alert('Error');
           // ...
       });
   }
-
   loginWithGoogleHandler = (e) => {
       var provider = new firebase.auth.GoogleAuthProvider();
       e.preventDefault();
       firebase.auth().signInWithPopup(provider).then(function(result) {
           // This gives you a Google Access Token. You can use it to access the Google API.
-          var token = result.credential.accessToken;
+          // var token = result.credential.accessToken;
           // The signed-in user info.
-          var user = result.user;
+          // var user = result.user;
           // ...
       }).catch(function(error) {
           // Handle Errors here.
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          // The email of the user's account used.
-          var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
-          var credential = error.credential;
+          // var errorCode = error.code;
+          // var errorMessage = error.message;
+          // // The email of the user's account used.
+          // var email = error.email;
+          // // The firebase.auth.AuthCredential type that was used.
+          // var credential = error.credential;
           // ...
       });
   }
@@ -75,19 +74,35 @@ class Login extends React.Component {
         e.preventDefault();
         firebase.auth().signInWithPopup(providerSecond).then(function(result) {
             // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            var user = result.user;
+            // var token = result.credential.accessToken;
+            // // The signed-in user info.
+            // var user = result.user;
             // ...
         }).catch(function(error) {
             // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // The email of the user's account used.
-            var email = error.email;
-            // The firebase.auth.AuthCredential type that was used.
-            var credential = error.credential;
+            // var errorCode = error.code;
+            // var errorMessage = error.message;
+            // // The email of the user's account used.
+            // var email = error.email;
+            // // The firebase.auth.AuthCredential type that was used.
+            // var credential = error.credential;
             // ...
+        });
+    }
+    resetPasswordHandler = (e) => {
+      e.preventDefault();
+        this.setState({
+            emailTwo: e.target.value
+        });
+        var auth = firebase.auth();
+        var emailAddress = e.target.value;
+
+        auth.sendPasswordResetEmail(emailAddress).then(function () {
+          alert('Wysłano e-mail')
+            // Email sent.
+        }, function (error) {
+          alert('Nie wysłano e-maila')
+            // An error happened.
         });
     }
   contentTxt = {
@@ -128,11 +143,13 @@ class Login extends React.Component {
     modal3: <div>
       <p>Zapomniałeś hasło? Nic straconego ! <br/>Wpisz swój adres e-mail w polu poniżej. <br /> Odeślemy Ci maila z
         instrukcjami co zrobić dalej.</p>
-      <form>
+      <form onSubmit={this.resetPasswordHandler}>
         <FieldGroup
           id="formControlsEmail"
           type="email"
           placeholder="Wprowadź adres e-mail"
+          required
+          onChange={this.resetPasswordHandler}
         />
         <Button type="submit" className="center-block btn-submit">
           Wyślij <Glyphicon glyph="arrow-down"/>

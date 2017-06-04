@@ -70,7 +70,7 @@ const BurgerMenuWrapper = (props) => (
 
 
 
-      <ul>
+      <ul style={{paddingLeft: 0}}>
         <Button id="b1" href="https://www.facebook.com/" bsStyle="primary" bsSize="xsmall">Facbook</Button>
       <Button id="b2" href="https://www.gmail.com/" bsStyle="primary" bsSize="xsmall">Google</Button>
         <Button id="b3" href="https://www.twitter.com/" bsStyle="primary" bsSize="xsmall">Twiter</Button>
@@ -81,10 +81,9 @@ const BurgerMenuWrapper = (props) => (
 
         <Navbar.Text className={styles.userMenu}>
           <LinkContainer to="/" onClick={() => firebase.auth().signOut()}>
-            <Navbar.Link href="/"><Glyphicon glyph="log-out"/></Navbar.Link>
+            <Navbar.Link style={{paddingLeft: 0}} href="/"><Glyphicon glyph="log-out"/> Wyloguj</Navbar.Link>
           </LinkContainer>
         </Navbar.Text>
-
 
     </BurgerMenu>
     <div id="page-wrap">
