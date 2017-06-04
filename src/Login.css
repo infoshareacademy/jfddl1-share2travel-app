@@ -1,47 +1,58 @@
 * {
-    font-family: Source Sans Pro,Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: Source Sans Pro, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
+
 .brand-image {
     max-width: 400px;
     height: auto;
     margin-top: 3%;
 }
+
 .text-bold {
     text-transform: uppercase;
 }
+
 .btn-fb {
     background-color: transparent;
     color: #000000;
     border: 1px solid #000000;
 }
+
 .btn-google {
     background-color: transparent;
     color: #000000;
     border: 1px solid #000000;
 }
+
 .social-media {
     margin-top: 3%;
 }
+
 @media screen and (max-width: 1200px) {
     .btn-fb, .btn-google {
         margin-top: 3%;
     }
 }
+
 .or {
     font-size: 3rem;
     margin-top: 2%;
 }
+
 .login-panel {
     width: 53%;
 }
+
 .login-panel p {
     font-size: 1.7rem;
 }
+
 .login-username, .login-password {
     background-color: transparent;
     color: #000000;
     border: 1px solid #000000;
 }
+
 .btn-submit {
     background-color: transparent;
     color: #000000;
@@ -51,31 +62,37 @@
     margin-bottom: 3%;
 
 }
+
 .btn-submit:hover {
     background-color: #000000;
     color: #ffffff;
     border: 1px solid #ffffff;
 
 }
+
 .btn-submit:active {
     background-color: #000000;
     color: #ffffff;
     border: 1px solid #ffffff;
 
 }
+
 .btn-submit:link {
     background-color: #000000;
     color: #ffffff;
     border: 1px solid #ffffff;
 }
+
 .navbar-default {
     background-color: transparent;
     border-color: transparent;
 }
+
 .menu {
     background-color: transparent;
     border: transparent;
 }
+
 a.cursor {
     cursor: pointer;
 }

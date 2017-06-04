@@ -10,16 +10,17 @@ class Popup extends React.Component {
     showModal: false
   }
 
-  close = () => this.setState({ showModal: false })
+  close = () => this.setState({showModal: false})
 
-  open = () => this.setState({ showModal: true })
+  open = () => this.setState({showModal: true})
 
   render = () => {
 
     return (
       <div>
 
-        <Image className="center-block brand-image"  responsive src={process.env.PUBLIC_URL + '/images/brand-black.png'}/>
+        <Image className="center-block brand-image" responsive
+               src={process.env.PUBLIC_URL + '/images/brand-black.png'}/>
         <br/>
         <Button
           bsStyle="info"
@@ -42,7 +43,7 @@ class Popup extends React.Component {
 
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={this.close} bsStyle="info" >Zamknij</Button>
+            <Button onClick={this.close} bsStyle="info">Zamknij</Button>
           </Modal.Footer>
         </Modal>
       </div>

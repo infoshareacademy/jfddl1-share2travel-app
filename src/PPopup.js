@@ -1,9 +1,6 @@
-/**
- * Created by piotrgolianek on 15.05.17.
- */
 import React from 'react';
 import './Login.css';
-import { Button, Modal, Glyphicon} from 'react-bootstrap'
+import {Button, Modal, Glyphicon} from 'react-bootstrap'
 
 class PPopup extends React.Component{
   render() {

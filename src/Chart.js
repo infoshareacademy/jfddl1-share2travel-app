@@ -6,7 +6,7 @@ const config = {
     text: 'Historia cen'
   },
   xAxis: {
-  type: 'datetime'
+    type: 'datetime'
   },
   yAxis: {
     title: {
@@ -21,7 +21,8 @@ const config = {
 class Chart extends React.Component {
 
   render() {
-    return <ReactHighcharts className='wykres' config={{...config, series: this.props.series}} ref="chart"></ReactHighcharts>;
+    return <ReactHighcharts className='wykres' config={{...config, series: this.props.series}}
+                            ref="chart"></ReactHighcharts>;
   }
 }
 export default Chart;
