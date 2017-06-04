@@ -70,7 +70,7 @@ export default connect(
           product => product.uid === productUid
         ) : null;
 
-      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseInt(e.price,10)}) : null;
+      const similarProductsPrices = product !== null ? products.filter(p => p.id === product.id).map(e => {return parseFloat(e.price,10).toFixed(2)}) : null;
 
       return product === null ? <p>Ładowanie produktu</p> : (
         <div>
@@ -132,7 +132,7 @@ export default connect(
                   <Button  key={products.uid} className="Comp-button" bsStyle="info">
                     <img  className="Comp-left Comp-img" src={process.env.PUBLIC_URL + '/nike.png'} alt=""/>
                     <span  className="Comp-price">
-                    {parseInt(price, 10) + ' zł'}
+                    {parseFloat(price, 10).toFixed(2) + ' zł'}
                     </span>
                   </Button>))}
 
