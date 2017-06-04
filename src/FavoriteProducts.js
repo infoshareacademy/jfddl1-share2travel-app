@@ -1,9 +1,10 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { remove } from './state/favoriteProducts'
+import { remove, update } from './state/favoriteProducts'
 import { fetchProducts } from './state/products'
 import {Image, Button} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
+import * as firebase from 'firebase'
 
 import './Comp.css'
 const divStyle = {
@@ -18,13 +19,30 @@ export default connect(
         favIds: state.favoriteProducts
     }),
     dispatch => ({
+        fetchFavs: (payload) => dispatch(update(payload)),
         fetchProducts: () => dispatch(fetchProducts()),
         removeFromFavorites: (productId) => dispatch(remove(productId)),
     })
 )(class FavoriteProducts extends React.Component {
     componentWillMount() {
         this.props.fetchProducts()
+
     }
+        constructor(props)
+        {
+            super(props);
+            var userIds = firebase.auth().currentUser.uid;
+
+            firebase.database().ref('/').child('favourites').child(userIds).on('value',  (snapshot) => {
+                console.log('FAVS FROM FB', snapshot.val());
+                this.props.fetchFavs(snapshot.val());
+            });
+        }
+
+
+
+
+
     render() {
 
         return (
