@@ -110,6 +110,10 @@ class Popap2 extends React.Component {
           </Modal.Header>
           <Modal.Body>
 
+            <label class="fileContainer">
+              Click here to trigger the file uploader!
+              <input type="file"/>
+            </label>
 
             <ButtonToolbar>
 
