@@ -1,5 +1,5 @@
 import React from 'react';
-import Karola from'./Karola';
+import Home from'./Home';
 import FavoriteProducts from './FavoriteProducts'
 import DetailedView from './DetailedView'
 import Popup from './Popup'
@@ -13,7 +13,7 @@ import TopNavigation from './TopNavigation'
 
 const links = [
   {path: '/', label: 'Home'},
-  {path: '/Karola', label: 'Wyszukaj'},
+  {path: '/Home', label: 'Wyszukaj'},
   {path: '/FavoriteProducts', label: 'Ulubione'},
 ]
 
@@ -65,7 +65,7 @@ class App extends React.Component {
                     <Row>
                       <Col md={12}>
                         <Route exact path="/" component={Popup}/>
-                        <Route path="/Karola" component={Karola}/>
+                        <Route path="/Home" component={Home}/>
                         <Route path="/DetailedView" component={DetailedView}/>
                         <Route path="/products/:productId" component={DetailedView}/>
                         <Route path="/start" component={Popup}/>

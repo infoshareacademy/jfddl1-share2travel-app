@@ -2,9 +2,9 @@ import React, {Component} from 'react'
 import GenericTable from './GenericTable'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'admin-lte/dist/css/AdminLTE.min.css'
-import './Karola.css';
+import './Home.css';
 
-class Karola extends Component {
+class Home extends Component {
 
   constructor(props) {
     super(props);
@@ -75,4 +75,4 @@ class Karola extends Component {
   }
 }
 
-export default Karola
+export default Home
