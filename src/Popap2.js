@@ -17,7 +17,7 @@ class Popap2 extends React.Component {
     showModal: false
   }
 
-  constructor(){
+  constructor() {
     super();
     this.storageRef = firebase.storage().ref();
   }
@@ -30,11 +30,11 @@ class Popap2 extends React.Component {
     console.log('Selected file:', event.target.files[0]);
     // File or Blob named mountains.jpg
     var file = event.target.files[0];
-// Create the file metadata
+    // Create the file metadata
     var metadata = {};
-// Upload file and metadata to the object 'images/mountains.jpg'
+    // Upload file and metadata to the object 'images/mountains.jpg'
     var uploadTask = this.storageRef.child('images/' + file.name).put(file, metadata);
-// Listen for state changes, errors, and completion of the upload.
+    // Listen for state changes, errors, and completion of the upload.
     uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
       function (snapshot) {
         // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
@@ -68,6 +68,15 @@ class Popap2 extends React.Component {
 
         var user = firebase.auth().currentUser;
 
+        user.updateProfile({
+          photoURL: downloadURL
+        }).then(function () {
+          console.log('USER UPDATED', firebase.auth().currentUser);
+        }, function (error) {
+          console.log('USER ERROR PHOTO NOT UPDATE');
+          // An error happened.
+        });
+
       });
   }
 
@@ -76,17 +85,17 @@ class Popap2 extends React.Component {
 
 
 
-  close = () => this.setState({showModal: false})
+  close = () => this.setState({ showModal: false })
 
-  open = () => this.setState({showModal: true})
+  open = () => this.setState({ showModal: true })
 
   render = () => {
 
     return (
       <div>
 
-        <Image className="center-block brand-image"/>
-        <br/>
+        <Image className="center-block brand-image" />
+        <br />
         <Button
           bsStyle="info"
           bsSize="medium"
@@ -105,10 +114,10 @@ class Popap2 extends React.Component {
             <ButtonToolbar>
               <Button className="b1" bsStyle="primary">Edytuj zdjęcie
                 <FileInput name="myImage"
-                           accept=".png,.gif"
-                           placeholder="My Image"
-                           className="inputClass"
-                           onChange={this.handleFileChange}/>
+                  accept=".jpeg,.jpg,.png,.gif"
+                  placeholder="My Image"
+                  className="inputClass"
+                  onChange={this.handleFileChange} />
               </Button>
 
               <Button bsStyle="primary">Default button
