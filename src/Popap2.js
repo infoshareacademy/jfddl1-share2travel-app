@@ -119,10 +119,7 @@ class Popap2 extends React.Component {
               {/*<div className="well" style={wellStyles}>*/}
               <Button className="well" bsStyle="primary" bsSize="large" block><Glyphicon glyph="edit" />Pobierz zdjęcie Profilowe
 
-                {/*<label class="fileContainer">*/}
-                  {/*Click here to trigger the file uploader!*/}
-                  {/*<input type="file"/>*/}
-                {/*</label>*/}
+              }
 
 
 
